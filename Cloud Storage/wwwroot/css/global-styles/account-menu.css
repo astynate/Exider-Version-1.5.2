@@ -1,0 +1,174 @@
+.account-menu {
+
+    height: auto;
+    width: 350px;
+    position: fixed;
+    top: 60px;
+    right: 35px;
+    background: white;
+    box-shadow: 10px 10px 70px rgba(0, 0, 0, 0.11);
+    border-radius: 10px;
+    z-index: 99999999999;
+    user-select: none;
+    display: none;
+
+}
+
+.account-menu[id="active"] {
+
+    display: block;
+
+}
+
+.account {
+
+    height: 80px;
+    width: auto;
+    margin: 4px;
+    border-radius: 20px;
+    background: rgba(33, 57, 94, 0.08);
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    transition: 0.15s ease;
+    border-bottom: 1px solid #eee;
+
+}
+
+.account:hover {
+ 
+    transform: scale(101%);
+
+}
+
+.account:active {
+ 
+    background: rgba(33, 57, 94, 0.15);
+    transform: scale(99%);
+
+}
+
+.avatar {
+
+    height: 55px;
+    width: 55px;
+    border-radius: 100%;
+    object-fit: cover;
+
+}
+
+.account-name {
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    grid-gap: 0;
+
+}
+
+.name {
+
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0;
+
+}
+
+.nickname {
+
+    font-weight: 400;
+    font-size: 12px;
+    margin: 0;
+    color: #888;
+
+}
+
+.manage-link {
+
+    display: flex;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    margin: 4px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    grid-gap: 4px;
+    transition: 0.15s ease;
+    background: rgba(33, 57, 94, 0.08);
+
+}
+
+.manage-link:hover {
+ 
+    transform: scale(101%);
+
+}
+
+.manage-link:active {
+ 
+    background: rgba(33, 57, 94, 0.15);
+    transform: scale(99%);
+
+}
+
+.manage-link span {
+
+    font-size: 14px;
+    color: #4a7aff;
+
+}
+
+.manage-link img {
+
+    height: 16px;
+    width: 16px;
+
+}
+
+.account-button {
+
+    padding: 10px 15px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    transition: 0.15s ease;
+    cursor: pointer;
+    grid-gap: 10px;
+
+}
+
+.account-button span {
+
+    font-size: 16px;
+    font-weight: 600;
+
+}
+
+.account-button:hover { 
+
+    background: rgba(33, 57, 94, 0.08);
+
+}
+
+.account-button img {
+
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    padding: 9px;
+    background: rgba(33, 57, 94, 0.08);
+    image-rendering: -webkit-optimize-contrast;
+
+}
+
+.account-button[id="last"] {
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}

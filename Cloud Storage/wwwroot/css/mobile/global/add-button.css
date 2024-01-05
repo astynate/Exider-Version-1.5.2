@@ -1,0 +1,41 @@
+.add-button {
+
+    height: calc(100vh - 70px);
+    height: 0vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    overflow: hidden;
+    border-top: 1px solid var(--main-border-color);
+    /* background: var(--main-panel-color);
+    -webkit-backdrop-filter: var(--main-panel-blur);
+    backdrop-filter: var(--main-panel-blur); */
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    /* -webkit-backdrop-filter: 100px; */
+    backdrop-filter: blur(30px);
+    background: white;
+    z-index: 3;
+    transition: 0.35s ease;
+
+}
+
+.add-button[id="active"] {
+
+    height: 60vh;
+
+}
+
+.close-add-button {
+
+    height: 20px;
+    width: auto;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+
+}

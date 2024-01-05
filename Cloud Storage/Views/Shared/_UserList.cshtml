@@ -1,0 +1,15 @@
+﻿@foreach (UserModel user in Model)
+{
+
+    <div class="Pop-Up-Window-Friend" id="@user.Root">
+        <img src="data:image/png;base64,@Convert.ToBase64String(user.Avatar)">
+        <div class="Pop-Up-Window-Friend-Description">
+            <h1 id="@user.Root">@user.Name @user.Surname</h1>
+            <p id="@user.Root">&#64;@user.Nickname</p>
+        </div>
+        <div class="Pop-Up-Window-Friend-Submit">
+            <img src="Images/Chats/submit.png" id="passive">
+        </div>
+    </div>
+
+}

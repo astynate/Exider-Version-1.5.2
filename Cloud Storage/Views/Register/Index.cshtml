@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+<title>Exider — Register Your Account</title>
+
+<link rel="stylesheet" href="~/css/login/login-local.css">
+<link rel="stylesheet" href="~/css/login/login-media.css">
+
+<div class="login-form">
+    <div class="login-form-header">
+        <img src="Images/Logo/zixe_logo_2.png" alt="logo" draggable="false">
+        <span>Register in <span id="selected">Exider</span></span>
+    </div>
+    <div class="login-with-services">
+        <div class="login-button">
+            <img src="Images/Logo/google_logo.png" class="login-button-logo" alt="logo">
+            <span class="login-button-text">Register with Google</span>
+        </div>
+        <div class="login-button">
+            <img src="Images/Logo/facebook_logo.png" class="login-button-logo" alt="logo">
+            <span class="login-button-text">Register with Facebook</span>
+        </div>
+    </div>
+    <div class="login-with-email">
+        <form id="main-form" autocomplete="off" method="post" asp-action="index" asp-controller="register">
+            <div class="login-entry-field" id="0">
+                <img src="Images/Login/user.png" alt="">
+                <input type="text" name="name" placeholder="Name" maxlength="30" autocomplete="off">
+            </div>
+            <div class="error-message" id="e0">
+                <img src="Images/Login/info.png" alt="">
+                <span>Email need to have this template: xxx@xxx.xxx</span>
+            </div>
+            <div class="login-entry-field" id="1">
+                <img src="Images/Login/user.png" alt="">
+                <input type="text" name="surname" placeholder="Surname" maxlength="30" autocomplete="off">
+            </div>
+            <div class="error-message" id="e1">
+                <img src="Images/Login/info.png" alt="">
+                <span>This field must not be empty</span>
+            </div>
+            <div class="login-entry-field" id="2">
+                <img src="Images/Login/user.png" alt="">
+                <input type="text" name="nickname" placeholder="Nickname" maxlength="30" autocomplete="off">
+            </div>
+            <div class="error-message" id="e2">
+                <img src="Images/Login/info.png" alt="">
+                <span>This field must not be empty</span>
+            </div>
+            <div class="login-entry-field" id="3">
+                <img src="Images/Login/email.png" alt="">
+                <input type="text" name="email" placeholder="Email" maxlength="30" autocomplete="off">
+            </div>
+            <div class="error-message" id="e3">
+                <img src="Images/Login/info.png" alt="">
+                <span>This field must not be empty</span>
+            </div>
+            <div class="login-entry-field" id="4">
+                <img src="Images/Login/password.png" alt="">
+                <input type="password" name="password" placeholder="Password" maxlength="30" autocomplete="off">
+            </div>
+            <div class="error-message" id="e4">
+                <img src="Images/Login/info.png" alt="">
+                <span>This field must not be empty</span>
+            </div>
+            <input type="submit" name="submit" value="Register" id="login-submit">
+        </form>
+    </div>
+    <div class="login-links">
+        <span>Have an account? <a href="/login">Login to Exider</a></span>
+    </div>
+</div>
+
+<script src="~/js/login/login-global-variables.js"></script>
+<script src="~/js/login-global/validate.js"></script>
+<script src="~/js/login/login-input-selection.js"></script>
+<script src="~/js/register/register-validate-handler.js"></script>
+<script src="~/js/login/login-local.js"></script>
+<script src="~/js/login/login-color-theme.js"></script>
+<script src="~/js/login-global/error_handler.js"></script>
+<script src="~/js/login/login-server-operations.js"></script>

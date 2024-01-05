@@ -1,0 +1,102 @@
+.Pop-Up-Window {
+
+    --height: auto;
+    --width: 450px;
+    --padding: 25px;
+    --hover-background: rgba(0, 0, 0, 0.15);
+    --border-color: rgba(0, 0, 0, 0.15);
+
+}
+
+.Pop-Up-Window {
+
+    display: flex;
+    flex-direction: column;
+    top: calc(35%);
+    left: calc(50% - var(--width) / 2);
+    position: fixed;
+    height: var(--height);
+    width: var(--width);
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.15);
+    transition: 0.25s ease;
+    z-index: 999999999;
+
+}
+
+.Header {
+
+    height: 55px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+
+}
+
+.Header-Decription {
+
+    font-size: 22px;
+    font-weight: 500;
+    margin-left: 20px;
+
+}
+
+.Header-Close {
+
+    height: 20px;
+    width: auto;
+    margin-left: auto;
+    padding: 7px;
+    margin-right: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.25s ease;
+
+}
+
+.Header-Close:hover {
+
+    background: var(--hover-background);
+
+}
+
+.Footer-Submit {
+
+    height: 50px;
+    width: 100%;
+    display: flex;
+    margin-top: auto;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.25s ease;
+
+}
+
+.Content input {
+
+    height: auto;
+    width: 100%;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    padding: 15px var(--padding);
+    border-bottom: 1px solid var(--border-color);
+
+}
+
+.Footer-Submit:hover { 
+
+    background: rgba(0, 0, 0, 0.026);
+
+}
+
+.Footer-Submit {
+
+    font-size: 18px;
+    color: #4b93ff;
+
+}

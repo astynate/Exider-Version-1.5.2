@@ -1,0 +1,54 @@
+.current-folder {
+
+    padding-left: 57px;
+
+}
+
+.current-folder-name { 
+
+    font-size: 48px;
+    font-weight: 600;
+
+}
+
+.current-folder-path {
+
+    display: flex;
+
+}
+
+.current-folder-path-folder {
+
+    font-size: 19px;
+    font-weight: 400;
+    color: #999;
+    margin-right: 5px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome 6.0+, Safari 3.1+, Edge & Opera 15+ */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+
+}
+
+.current-folder-path-folder:hover { 
+
+    color: black;
+    cursor: pointer;
+
+}
+
+.current-folder-path-folder:hover img { 
+
+    filter: invert(0%);
+
+}
+
+.current-folder-path-folder img {
+
+    height: 17px;
+    width: auto;
+    margin-right: 5px;
+    filter: invert(50%);
+
+}

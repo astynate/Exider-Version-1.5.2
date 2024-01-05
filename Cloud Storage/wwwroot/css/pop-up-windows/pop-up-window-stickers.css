@@ -1,0 +1,161 @@
+.pop-up-window-stickers {
+
+    bottom: 80px;
+    right: 30px;
+    height: 40vh;
+    width: 30vh;
+    padding: 10px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px) saturate(70%);
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    z-index: 99999999999;
+    opacity: 0;
+    transition: 0.15s ease;
+    visibility: hidden;
+    overflow: hidden;
+
+}
+
+.pop-up-window-stickers[id="active"] {
+
+    height: 55vh;
+    width: 40vh;
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.pop-up-window-stickers-header {
+
+    height: 40px;
+    width: auto;
+    background: #eee;
+
+}
+
+#stickers {
+
+    width: auto;
+    border-radius: 10px;
+
+}
+
+#stickers span {
+
+    padding: 0px 30px;
+    border-radius: 7px;
+
+}
+
+.stickers {
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 5px;
+    grid-gap: 10px;
+
+}
+
+.stickers span {
+
+    /**/
+
+}
+
+.stickers::-webkit-scrollbar {
+
+    width: 0;
+    background: transparent;
+
+}
+
+/* .stickers:hover::-webkit-scrollbar {
+
+    width: 3px;
+    visibility: visible;
+
+} */
+
+.sticker-content {
+
+    height: auto;
+    width: auto;
+    background: #eee;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    padding: 5px;
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+
+}
+
+#emoji {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    grid-gap: 5px;
+
+}
+
+.smile {
+
+    font-size: 4.5vh;
+    padding: 0px;
+    display: inline;
+    border-radius: 15px;
+    transition: 0.25s ease;
+
+}
+
+.smile:hover {
+
+    background: #ddd;
+    cursor: pointer;
+
+}
+
+#sticker-wrapper {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+
+}
+
+.sticker {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 15px;
+    aspect-ratio: 1 / 1;
+
+}
+
+.sticker:hover {
+
+    cursor: pointer;
+    background: #ddd;
+
+}
+
+.sticker img {
+
+    height: 90%;
+    width: 90%;
+    image-rendering: pixelated;
+
+}

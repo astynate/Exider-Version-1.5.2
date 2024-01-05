@@ -1,0 +1,43 @@
+﻿@* @model ChatsModel
+
+@if (Model.messages != null)
+{
+
+    @for (int i = Model.messages.Length - 1; i >= 0; i--)
+    {
+
+        if (Model.user.Root == Model.messages[i].user_id)
+        {
+            <div class="message" id="my">
+                <div>
+                    <h1>@Model.messages[i].user.Name @Model.messages[i].user.Surname</h1>
+                    <p>@Model.messages[i].text</p>
+                </div>
+                <img src="data:image/png;base64,@Convert.ToBase64String(Model.messages[i].user.Avatar)" alt="">
+            </div>
+
+        }
+
+        else
+        {
+
+            <div class="message">
+                <img src="data:image/png;base64,@Convert.ToBase64String(Model.messages[i].user.Avatar)" alt="">
+                <div>
+                    <h1>@Model.messages[i].user.Name @Model.messages[i].user.Surname</h1>
+                    <p>@Model.messages[i].text</p>
+                </div>
+            </div>
+
+        }
+
+    }
+
+}
+
+else
+{
+    
+    <h1>NONE</h1>
+
+} *@

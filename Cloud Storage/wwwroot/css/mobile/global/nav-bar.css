@@ -1,0 +1,37 @@
+.nav-bar {
+
+    position: fixed;
+    left: 0;
+    bottom: 50px;
+    display: flex;
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 3px;
+    -webkit-backdrop-filter: 20px;
+    backdrop-filter: blur(20px);
+    background: #eee;
+    z-index: 9999999;
+}
+
+.nav-bar-item {
+
+    padding: 10px;
+    border-radius: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nav-bar-item[id="active"] {
+
+    background: white;
+
+}

@@ -1,0 +1,24 @@
+.login-entry-field {
+    border: 3px solid rgba(0, 0, 0, 0);
+}
+
+.main-header-wrapper {
+
+    margin-bottom: 0px;
+}
+
+.main-footer-wrapper {
+    margin-top: 0px;
+}
+
+.login-form {
+    height: auto;
+    width: 550px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-bottom: 30px;
+    padding-left: 70px;
+    padding-right: 70px;
+    box-shadow: 0px 0px 100px var(--main-form-shadow-color);
+    border-radius: 45px;
+}

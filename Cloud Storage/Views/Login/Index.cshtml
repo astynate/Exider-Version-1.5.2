@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Exeider - Sign Up";
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+<title>Exider — Login Your Account</title>
+
+<link rel="stylesheet" href="css/login/login-local.css">
+<link rel="stylesheet" href="css/login/login-media.css">
+
+<div class="login-form">
+    <div class="login-form-header">
+        <img src="Images/Logo/zixe_logo_2.png" alt="logo" draggable="false">
+        <span>Login to <span id="selected">Exider</span></span>
+    </div>
+    <div class="login-with-services">
+        <div class="login-button">
+            <img src="Images/Logo/google_logo.png" class="login-button-logo" alt="logo">
+            <span class="login-button-text">Login with Google</span>
+        </div>
+        <div class="login-button">
+            <img src="Images/Logo/facebook_logo.png" class="login-button-logo" alt="logo">
+            <span class="login-button-text">Login with Facebook</span>
+        </div>
+    </div>
+    <div class="login-with-email">
+        <form method="post" id="main-form" autocomplete="off">
+            <div class="login-entry-field" id="0">
+                <img src="Images/Login/email.png">
+                <input type="text" name="email" placeholder="Email" maxlength="30" autocomplete="off">
+            </div>
+            <div class="error-message" id="e0">
+                <img src="Images/Login/info.png">
+                <span>This field must not be empty</span>
+            </div>
+            <div class="login-entry-field" id="1">
+                <img src="Images/Login/password.png">
+                <input type="password" name="password" placeholder="Password" maxlength="30" autocomplete="off">
+            </div>
+            <div class="error-message" id="e1">
+                <img src="Images/Login/info.png" alt="">
+                <span>This field must not be empty</span>
+            </div>
+            <input type="submit" name="submit" value="Login" id="login-submit">
+        </form>
+    </div>
+    <div class="login-links">
+        <span>Don't have an account? <a href="/register">Register in Exider</a></span>
+        <a href="#">Forgot a password?</a>
+    </div>
+</div>
+
+<script src="~/js/login/login-global-variables.js"></script>
+<script src="~/js/login-global/validate.js"></script>
+<script src="~/js/login/login-input-selection.js"></script>
+<script src="~/js/login/login-validate-handler.js"></script>
+<script src="~/js/login/login-local.js"></script>
+<script src="~/js/login/login-color-theme.js"></script>
+<script src="~/js/login-global/error_handler.js"></script>
+<script src="~/js/login/login-server-operations.js"></script>

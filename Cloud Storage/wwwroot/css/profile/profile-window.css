@@ -1,0 +1,110 @@
+﻿.edit-name {
+    height: 50vh;
+    width: 35vw;
+    padding: 20px;
+    left: 32vw;
+    top: 25vh;
+    position: fixed;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(40px) saturate(20%);
+    border-radius: 20px;
+    transition: 0.5s ease;
+}
+
+    .edit-name form {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        position: relative;
+        width: 100%;
+    }
+
+    .edit-name h1 {
+        margin: 0;
+        padding: 0;
+        color: black;
+        font-size: 18px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+    }
+
+    .edit-name h2 {
+        margin: 0;
+        padding: 0;
+        margin-top: 15px;
+        color: black;
+        font-size: 21px;
+        cursor: pointer;
+    }
+
+.file_type {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    padding-left: 15px;
+    border-radius: 7px;
+    cursor: pointer;
+    border: 1px solid #333;
+}
+
+    .file_type h1 {
+        top: 0;
+        left: 0;
+        position: static;
+        font-size: 21px;
+        font-weight: 400;
+        color: black;
+        border: none;
+    }
+
+    .file_type select {
+        height: 100%;
+        width: 70px;
+        margin-left: auto;
+        background: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 16px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: none;
+    }
+
+.edit-name[id="passive"] {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.edit-name input {
+    height: 30px;
+    width: auto;
+    margin-top: 15px;
+    font-size: 20px;
+    outline: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 15px;
+    color: black;
+    background: none;
+    border: 1px solid #333;
+}
+
+    .edit-name input[type="submit"] {
+        height: 50px;
+        padding: 0;
+        margin-top: auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: white;
+        background: #0050ff;
+        cursor: pointer;
+        border-radius: 15px;
+    }

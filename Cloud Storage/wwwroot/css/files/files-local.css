@@ -1,0 +1,109 @@
+.Main-Content-Wrapper {
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: relative;
+
+}
+
+.top-panel {
+
+    height: 70px;
+    width: auto;
+    padding: 0px 50px;
+    display: grid;
+    position: sticky;
+    top: 0px;
+    left: 0;
+    background: white;
+    z-index: 999999999;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.top-panel-left {
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.top-panel-center {
+
+    height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-right: 5vw; */
+    padding-left: 0;
+
+}
+
+.top-panel-right {
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+}
+
+.top-panel-button {
+
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    grid-gap: 7px;
+    cursor: pointer;
+    padding: 7px 10px;
+    border-radius: 10px;
+    image-rendering: -webkit-optimize-contrast;
+    transition: 0.25s ease;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome 6.0+, Safari 3.1+, Edge & Opera 15+ */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+
+}
+
+.top-panel-button:hover {
+
+    background: #f9faff;
+    background: #f4f6ff;
+
+}
+
+.top-panel-button:active {
+
+    transform: scale(90%);
+    background: #f4f6ff;
+
+}
+
+.top-panel-button:active span {
+
+    margin-top: 0px;
+
+}
+
+.top-panel-button img {
+
+    height: 25px;
+    width: 25px;
+
+}
+
+.top-panel-button span {
+
+    margin-top: 3px;
+    color: #4a7aff;
+    font-weight: 500;
+    font-size: 14px;
+
+}

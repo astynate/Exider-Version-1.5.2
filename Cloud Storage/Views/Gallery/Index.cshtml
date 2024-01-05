@@ -1,0 +1,48 @@
+﻿@using Cloud_Storage.Models;
+<title>Exider — Gallery Page</title>
+<link href="~/css/gallary/gallery-local.css" rel="stylesheet" />
+
+<div class="main-content-header">
+
+    <div class="main-content-header-top">
+        <div class="main-content-header-button">
+            <img src="Images/Home/back.png" alt="back">
+        </div>
+        <div class="main-content-header-button">
+            <img src="Images/Home/next.png" alt="next">
+        </div>
+        <div class="main-content-header-search">
+            <img src="Images/Home/search.png">
+            <input type="text" placeholder="Search generations, peoples, themes" autocomplete="off">
+        </div>
+        <div class="main-content-header-button-wrapper">
+            <div class="main-content-header-button-right">
+                <img src="Images/Home/setting.png" class="main-content-header-button-image">
+            </div>
+            <div class="main-content-header-button-right" id="notification">
+                <img src="Images/Home/notification.png" class="main-content-header-button-image" id="notification">
+            </div>
+        </div>
+        <div class="header-avatar">
+
+            @if (ViewBag.currentUser != null && ViewBag.currentUser.Avatar != null)
+            {
+                <img src="data:image/png;base64,@(Convert.ToBase64String(ViewBag.currentUser.Avatar))" class="main-content-header-avatar">
+            }
+
+        </div>
+
+    </div>
+
+</div>
+
+<h1 class="title">Photos</h1>
+
+<div class="main-content">
+
+    @foreach (FileView file in Model)
+    {
+        <img src="data:image/png;base64,@(Convert.ToBase64String(file.file))" class="main-content-file-image">
+    }
+
+</div>

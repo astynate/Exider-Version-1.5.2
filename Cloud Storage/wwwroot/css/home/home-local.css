@@ -1,0 +1,13 @@
+/* ---------------------------------- */
+
+.Main-Content-Wrapper {
+
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+    --padding: 2vw;
+
+}
+
+/* ---------------------------------- */

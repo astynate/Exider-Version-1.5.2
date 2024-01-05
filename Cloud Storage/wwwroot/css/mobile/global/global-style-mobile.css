@@ -1,0 +1,145 @@
+/* Import Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* Global Styles */
+
+html, body {
+
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+
+}
+
+.body-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: var(--main-background-color);
+}
+
+live-preview-root {
+
+    display: none;
+
+}
+
+/* Global Colors */
+
+:root {
+
+    --main-background-color: #ffffff;
+    --main-border-color: rgba(0, 0, 0, 0.05);
+    --main-header-text-color: #fff;
+    --main-scrollbar-background-color: #efefef;
+    --main-panel-color: rgba(255, 255, 255, 0.9);
+    --main-panel-blur: blur(10px);
+    --main-scrollbar-thumb-color: #d2d2d2;
+    --sub-header-text-color: #777777;
+
+}
+
+/* Global Scrollbar Settings */
+
+::-webkit-scrollbar {
+
+    width: 2px;
+    scroll-behavior: smooth;
+
+}
+
+/* ---------------------------------------------- */
+
+.body-header {
+
+    min-height: 70px;
+    height: 70px;
+    border-bottom: 1px solid var(--main-border-color);
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    background: var(--main-panel-color);
+    -webkit-backdrop-filter: var(--main-panel-blur);
+    backdrop-filter: var(--main-panel-blur);
+    align-items: center;
+
+}
+
+/* ---------------------------------------------- */
+
+.user-avatar {
+
+    height: 28px;
+    width: 28px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-left: 15px;
+
+}
+
+.logo {
+
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+
+}
+
+/* ---------------------------------------------- */
+
+.body-navigation-panel {
+
+    --side-passings: 25px;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--main-border-color);
+    width: calc(100% - var(--side-passings) * 2);
+    padding: 0px var(--side-passings);
+    position: fixed;
+    align-items: center;
+    background: var(--main-panel-color);
+    -webkit-backdrop-filter: var(--main-panel-blur);
+    backdrop-filter: var(--main-panel-blur);
+    bottom: 0;
+    left: 0;
+
+}
+
+.navigation-button {
+
+    height: 22px;
+    width: auto;
+    padding: 0px auto;
+    padding: 10px;
+    transition: 0.15s ease;
+    cursor: pointer;
+
+}
+
+.navigation-button:hover {
+
+    transform: scale(105%);
+
+}
+
+.navigation-button:active {
+
+    transform: scale(95%);
+
+}
+
+/* ---------------------------------------------- */

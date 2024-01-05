@@ -1,0 +1,39 @@
+.Chat-Wrapper {
+
+    position: relative;
+
+}
+
+.chat-not-select {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease;
+    opacity: 0;
+}
+
+    .chat-not-select[id="active"] {
+        opacity: 1;
+    }
+
+.chat-not-select span {
+
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+
+}
+
+.chat-not-select img {
+
+    height: 230px;
+    width: 230px;
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+
+}

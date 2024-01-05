@@ -1,0 +1,323 @@
+﻿<title>Exider — Files Page</title>
+
+<link rel="stylesheet" href="css/files/files-local.css">
+<link rel="stylesheet" href="css/files/file-preview-edit.css">
+<link rel="stylesheet" href="css/files/create.css">
+<link rel="stylesheet" href="css/files/files-current-file.css">
+<link rel="stylesheet" href="css/files/files-items.css">
+<link rel="stylesheet" href="css/files/files-item-content.css">
+<link rel="stylesheet" href="~/css/pop-up-windows/pop-up-window-local.css" />
+<link rel="stylesheet" href="~/css/pop-up-windows/context-menu.css" />
+
+@{
+
+    string[] image_format = new string[] { "png", "jpg", "jpeg", "gif" };
+    string[] exception_format = new string[] { "txt", "xlsx", "ppt" };
+    string[] supporting_format = new string[] { "txt","xlsx", "ppt", "docx", "jpg", "png", "jpeg" };
+
+}
+
+<script src="~/js/global-logic/pop-up-error-message.js"></script>
+<script>
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+
+    if (error == "not_enough_space") {
+
+        new ErrorMessage('Storage is full');
+
+    }
+
+</script>
+
+<div class="main-content-header">
+
+    <div class="main-content-header-top">
+        <div class="main-content-header-button">
+            <img src="Images/Home/back.png" alt="back">
+        </div>
+        <div class="main-content-header-button">
+            <img src="Images/Home/next.png" alt="next">
+        </div>
+        <div class="main-content-header-search">
+            <img src="Images/Home/search.png">
+            <input type="text" placeholder="Search generations, peoples, themes" autocomplete="off">
+        </div>
+        <div class="main-content-header-button-wrapper">
+            <div class="main-content-header-button-right">
+                <img src="Images/Home/setting.png" class="main-content-header-button-image">
+            </div>
+            <div class="main-content-header-button-right" id="notification">
+                <img src="Images/Home/notification.png" class="main-content-header-button-image" id="notification">
+            </div>
+        </div>
+        <div class="header-avatar">
+
+            @if (ViewBag.currentUser != null && ViewBag.currentUser.Avatar != null)
+            {
+                <img src="data:image/png;base64,@(Convert.ToBase64String(ViewBag.currentUser.Avatar))" class="main-content-header-avatar">
+            }
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="content-wrapper">
+
+    <div class="left">
+
+        <div class="top-panel">
+            <div class="top-panel-left">
+                <div class="top-panel-button">
+                    <img src="Images/Files/open-access.png" alt="">
+                    <span>Open access</span>
+                </div>
+            </div>
+            <div class="top-panel-center">
+                <div class="top-panel-button" id="add">
+                    <img src="Images/Files/add.png" id="add">
+                </div>
+            </div>
+            <div class="top-panel-right">
+                <div class="top-panel-button" id="show">
+                    <img src="Images/Files/show.png" id="show">
+                </div>
+                <div class="top-panel-button">
+                    <img src="Images/Files/info.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+
+            <div class="create">
+                <div class="block">
+                    <span class="title">Basic</span>
+                    <form id="myForm" asp-action="UploadFiles" asp-controller="files" method="post" enctype="multipart/form-data">
+                        <div class="block-items">
+                        
+                            <div class="create-item-wrapper" id="create-folder">
+                                <div class="create-item" id="create-folder">
+                                    <img src="Images/Files/new-folder.png" id="create-folder" />
+                                </div>
+                                <span id="create-folder">Folder</span>
+                            </div>
+@*                             <div class="create-item-wrapper" id="upload">
+                                <div class="create-item">
+                                    <img src="Images/Files/collection.png">
+                                </div>
+                                <span>Collection</span>
+                            </div> *@
+                            <div class="create-item-wrapper" onclick="new FileForm('txt')">
+                                <div class="create-item">
+                                    <img src="Images/Files/text.png">
+                                </div>
+                                <span>Text</span>
+                            </div>
+                            <div class="create-item-wrapper" style="cursor: pointer;">
+                                <div class="create-item" style="position: relative; cursor: pointer;">
+                                    <img src="Images/Files/upload.png">
+                                    <input type="file" name="UploadFile" id="UploadFile" multiple style="height: 100%; width: 100%; position: absolute; opacity: 0; cursor: pointer;">
+                                    <input type="text" value="@ViewData["current_folder"]" style="display: none;" name="id" />
+                                </div>
+                                <span>Upload</span>
+                            </div>
+                        
+                        </div>
+                    </form>
+                </div>
+                <div class="block">
+                    <span class="title">Office</span>
+                    <div class="block-items">
+                        <div class="create-item-wrapper" onclick="new FileForm('docx')">
+                            <div class="create-item">
+                                <img src="Images/Files/document.png">
+                            </div>
+                            <span>Document</span>
+                        </div>
+                        <div class="create-item-wrapper" onclick="new FileForm('xlsx')">
+                            <div class="create-item">
+                                <img src="Images/Files/table.png">
+                            </div>
+                            <span>Table</span>
+                        </div>
+                        <div class="create-item-wrapper" onclick="new FileForm('ppt')">
+                            <div class="create-item">
+                                <img src="Images/Files/presentation.png">
+                            </div>
+                            <span>Presentation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="current-folder">
+
+
+                @if (Model.Path.Length < 1)
+                {
+                    <span class="current-folder-name">Cloud</span>
+                } 
+
+                else
+                {
+                    <span class="current-folder-name">@Model.Path[Model.Path.Length - 1].name</span>
+                }
+
+                <div class="current-folder-path" id="normal">
+
+                    <a href="~/files" style="text-decoration: none; margin-top: auto; margin-bottom: auto; color: black;">
+                        <div class="current-folder-path-folder">
+                            <img src="Images/Buttons/files_passive.svg">
+                            <span>Root</span>
+                            <img src="Images/Files/right-arrow.png">
+                        </div>
+                    </a>
+
+                    @foreach (Folder folder in Model.Path)
+                    {
+                        <a href="~/files?id=@folder.id" style="text-decoration: none; margin-top: auto; margin-bottom: auto; color: black;">
+                            <div class="current-folder-path-folder">
+                                <img src="Images/Files/folder-icon.png">
+                                <span>@folder.name</span>
+                                <img src="Images/Files/right-arrow.png">
+                            </div>
+                        </a>
+                    }
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                @foreach (var folder in Model.Folders)
+                {
+                    <a href="~/files?id=@folder.id" style="text-decoration: none; color: black;">
+
+                        <div class="item folder" id="normal" data-file-id="@folder.id">
+                            <div class="item-content">
+                                <img src="Images/Files/folder.png" class="folder-image" draggable="false">
+                            </div>
+                            <div class="item-description">
+                                <span class="item-name">@folder.name</span>
+                                <span class="item-info">@folder.date</span>
+                            </div>
+                        </div>
+
+                    </a>
+
+                }
+
+                @foreach (FileView file in Model.Files)
+                {
+
+                    @if (Array.Exists(image_format, x => x == file.type))
+                    {
+
+                        <div class="item" data-file-id="@file.id">
+                            <div class="item-content" id="image">
+                                <img src="data:image/png;base64,@(Convert.ToBase64String(file.file))" class="file-image">
+                            </div>
+                            <div class="item-description">
+                                <span class="item-name">@file.name</span>
+                                <span class="item-info">@file.date</span>
+                            </div>
+                        </div>
+
+                    }
+
+                    else
+                    {
+
+                        <div class="item" id="normal" data-file-id="@file.id">
+                            <div class="item-content" id="@file.type">
+                                <div>
+                                    @if (Array.Exists(exception_format, x => x == file.type) == false)
+                                    {
+                                        <span class="item-name" style="color: white; top: 50%; left: 50%; position: absolute; transform: translateX(-50%) translateY(-50%); z-index: 10;">@file.type</span>
+                                    }
+                                    @if (Array.Exists(supporting_format, x => x == file.type) == true)
+                                    {
+                                        <img src="~/images/Files/preview/@(file.type + ".png")" style="height: auto; width: 50%; object-fit: contain; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);" />
+                                    }
+                                    else
+                                    {
+                                        <img src="~/images/Files/preview/default.png" style="height: auto; width: 50%; object-fit: contain; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);" />
+                                    }
+                                </div>
+                            </div>
+                            <div class="item-description">
+                                <span class="item-name">@file.name</span>
+                                <span class="item-info">@file.date</span>
+                            </div>
+                        </div>
+
+                    }
+
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="right">
+
+        <div class="top-panel">
+            <div class="top-panel-left">
+                <div class="top-panel-button" id="scale">
+                    <img src="Images/Files/up-scale.png" id="scale">
+                </div>
+                <div class="top-panel-button" id="edit">
+                    <img src="Images/Files/edit.png" id="edit">
+                </div>
+            </div>
+            <div class="top-panel-center">
+                <div class="top-panel-center-info">
+                    <h1>No file selected</h1>
+                    <p></p>
+                </div>
+            </div>
+            <div class="top-panel-right">
+                <div class="top-panel-button" id="show">
+                    <img src="Images/Files/show.png" id="show">
+                </div>
+                <div class="top-panel-button">
+                    <img src="Images/Files/info.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="right-content">
+            <!-- <img src="1.jpg"class="right-image"> -->
+            <div contenteditable="true" class="edit-txt"></div>
+        </div>
+
+    </div>
+
+</div>
+<script src="~/js/pop-up-window/menu.js"></script>
+<script src="~/js/pop-up-window/context-menu.js"></script>
+<script src="~/js/pop-up-window/file-context-menu.js"></script>
+<script src="~/js/ajax-requests/ajax-handler.js"></script>
+<script src="~/js/files/files-local.js"></script>
+<script src="~/js/files/file-context-menu.js"></script>
+<script src="~/js/files/files-body-events.js"></script>
+<script src="~/js/files/create.js"></script>
+<script src="~/js/files/right-panel.js"></script>
+<script src="~/js/global-logic/pop-up-form.js"></script>
+<script src="~/js/files/context-menu-functions.js"></script>
+<script src="~/js/ajax-requests/ajax-download-handler.js"></script>
+<script src="~/js/ajax-requests/ajax-delete-handler.js"></script>
+<script>
+
+    document.getElementById("UploadFile").addEventListener("change", function () {
+        document.getElementById("myForm").submit();
+    });
+
+</script>

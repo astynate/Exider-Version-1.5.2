@@ -1,0 +1,12 @@
+.body-content {
+
+    --padding: 15px;
+    height: auto;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin: 100px var(--padding);
+    grid-gap: var(--padding);
+    border-radius: 20px;
+
+}

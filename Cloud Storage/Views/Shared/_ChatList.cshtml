@@ -1,0 +1,24 @@
+﻿@if (Model != null)
+{
+    
+    @foreach (ChatView chat in Model)
+    {
+
+        @if (chat.avatar != null)
+        {
+
+            <div class="Pop-Up-Window-Friend" id="@chat.chat_id">
+                <img src="data:image/png;base64,@Convert.ToBase64String(chat.avatar)">
+                <div class="Pop-Up-Window-Friend-Description">
+                    <h1>@chat.name</h1>
+                </div>
+                <div class="Pop-Up-Window-Friend-Submit">
+                    <img src="Images/Chats/submit.png" id="passive">
+                </div>
+            </div>
+
+        }
+
+    }
+
+}

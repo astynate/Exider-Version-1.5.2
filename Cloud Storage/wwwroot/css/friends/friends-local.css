@@ -1,0 +1,45 @@
+/* Main Content Global */
+
+.Main-Content-Wrapper {
+
+  --count-files: 4;
+  --main-content-paddings: 15vw;
+  --search-text-color: #848487;
+  --search-background-color: #2c2d2e;
+
+}
+
+.Main-Content-Wrapper {
+
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+}
+
+.Main-Content {
+
+  height: auto;
+  width: auto;
+  display: flex;
+  padding-left: var(--main-content-paddings);
+  padding-right: var(--main-content-paddings);
+  flex-direction: column;
+
+}
+
+.Main-Content h1 {
+
+  font-size: 35px;
+  color: black;
+  font-weight: 500;
+
+}
+
+.Main-Content span {
+
+  background: -webkit-linear-gradient(45deg, rgb(84, 122, 247), rgb(162, 208, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}

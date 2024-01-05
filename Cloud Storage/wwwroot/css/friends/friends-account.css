@@ -1,0 +1,88 @@
+.Main-Content-Account {
+
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    transition: 0.25s ease;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+
+}
+
+    .Main-Content-Account:hover {
+        background: #e4e4e4;
+        cursor: pointer;
+        border-bottom: 1px solid transparent;
+        border-radius: 15px;
+    }
+
+.Main-Content-Account-Name {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+    margin-right: auto;
+
+}
+
+.Main-Content-Account img {
+    
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 100%;
+
+}
+
+.Main-Content-Account h1 {
+
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+
+}
+
+.Main-Content-Account p {
+
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #777;
+
+}
+
+.Main-Content-Account-Button {
+
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 50px;
+    width: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-right: 10px;
+    background: #eee;
+    color: black;
+    transition: 0.25s ease;
+
+}
+
+.Main-Content-Account-Button:hover {
+
+    cursor: pointer;
+    transform: scale(95%);
+
+}
+
+.Main-Content-Account-Button[id="delete"] {
+
+    background: rgb(237, 43, 43);
+    color: white;
+
+}

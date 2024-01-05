@@ -1,0 +1,96 @@
+﻿<title>Exider — Requests Page</title>
+<link rel="stylesheet" href="~/css/home/home-feed.css">
+<link rel="stylesheet" href="~/css/friends/friends-local.css">
+<link rel="stylesheet" href="~/css/friends/friends-account.css">
+
+<style>
+
+    form {
+        position: relative;
+    }
+
+    input[type="submit"] {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        cursor: pointer;
+    }
+
+</style>
+
+<div class="main-content-header">
+
+    <div class="main-content-header-top">
+        <div class="main-content-header-button">
+            <img src="~/Images/Home/back.png" alt="back">
+        </div>
+        <div class="main-content-header-button">
+            <img src="~/Images/Home/next.png" alt="next">
+        </div>
+        <div class="main-content-header-search">
+            <img src="~/Images/Home/search.png">
+            <form method="post"><input type="text" name="search_request" placeholder="Search accounts" autocomplete="off"></form>
+        </div>
+        <div class="main-content-header-button-wrapper">
+            <div class="main-content-header-button-right">
+                <img src="~/Images/Home/setting.png" class="main-content-header-button-image">
+            </div>
+            <div class="main-content-header-button-right" id="notification">
+                <img src="~/Images/Home/notification.png" class="main-content-header-button-image" id="notification">
+            </div>
+        </div>
+        <div class="header-avatar">
+
+            @if (ViewBag.currentUser != null && ViewBag.currentUser.Avatar != null)
+            {
+                <img src="data:image/png;base64,@(Convert.ToBase64String(ViewBag.currentUser.Avatar))" class="main-content-header-avatar">
+            }
+        </div>
+
+    </div>
+
+    <div class="main-content-header-navigation">
+
+        <a href="~/friends" style="text-decoration: none; margin-top: 1.5vh; color: black;">
+            <span>Friends</span>
+        </a>
+
+        <a href="~/friends/requests" style="text-decoration: none; margin-top: 1.5vh;color: black;">
+            <span id="active">Requests</span>
+        </a>
+
+        <a href="~/friends/invitations" style="text-decoration: none; margin-top: 1.5vh; color: black;">
+            <span>Invitations</span>
+        </a>
+
+    </div>
+
+</div>
+
+<div class="Main-Content">
+
+    <h1>Your <span>Requests</span></h1>
+
+    @foreach (var friend in Model)
+    {
+
+        <div class="Main-Content-Account">
+            <img src="data:image/png;base64,@(Convert.ToBase64String(friend.Avatar))" alt="">
+            <div class="Main-Content-Account-Name">
+                <h1>@friend.Name @friend.Surname</h1>
+                <p>&#64;@friend.Nickname</p>
+            </div>
+
+            <form asp-action="delete" asp-controller="friends" method="post" id="delete" class="Main-Content-Account-Button">
+                Delete
+                <input type="text" name="option" value="request" style="display: none;" />
+                <input type="submit" name="id" value="@ViewData["root_id"] @friend.Root" />
+            </form>
+        </div>
+
+    }
+
+</div>

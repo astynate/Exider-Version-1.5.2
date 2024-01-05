@@ -1,0 +1,46 @@
+/* Local Color Variables */
+
+.Devide-Line {
+
+    --line-color-1: #000;
+    --line-color-2: #000000;
+    --line-color-3: #000;
+    --line-color-4: #ffffff;
+
+}
+
+/* Devide Line Styles */
+
+.Devide-Line {
+    height: 100vh;
+    width: 100%;
+    max-width: 1px;
+    background: linear-gradient(1deg, var(--line-color-1), var(--line-color-4), var(--line-color-1));
+    background-size: 800%;
+    background: var(--main-border-color);
+    animation: border_animation 3s ease infinite;
+}
+
+/* Animation */
+
+@keyframes border_animation {
+
+	0% {
+
+		background-position: top;
+
+	}
+
+    50% {
+
+		background-position: bottom;
+
+    }
+
+	100% {
+
+		background-position: top;
+
+	}
+    
+}

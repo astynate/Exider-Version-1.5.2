@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Login.cshtml";
+
+}
+
+<title>Exider — Confirm Your Email Adress</title>
+
+<link rel="stylesheet" href="~/css/login/login-local.css">
+<link rel="stylesheet" href="~/css/login/login-media.css">
+<link href="~/css/login/confirm-local.css" rel="stylesheet" />
+
+<div class="login-form">
+    <div class="login-form-header">
+        <img src="~/Images/Logo/zixe_logo_2.png" alt="logo" draggable="false">
+        <span>Confirm your  <span id="selected">Email</span></span>
+    </div>
+    <div class="login-with-services">
+        <div class="login-button">
+            <img src="~/Images/Logo/google_logo.png" class="login-button-logo" alt="logo">
+            <span class="login-button-text">Login with Google</span>
+        </div>
+        <div class="login-button">
+            <img src="~/Images/Logo/facebook_logo.png" class="login-button-logo" alt="logo">
+            <span class="login-button-text">Login with Facebook</span>
+        </div>
+    </div>
+    <div class="login-with-email">
+        <form id="main-form" autocomplete="off" method="post" asp-action="confirm" asp-controller="register">
+            <div class="login-entry-field" id="confirm-code">
+                <img src="~/Images/Login/password.png" alt="">
+                <input type="text" name="code" placeholder="F9B4TF" maxlength="6" class="code" autocomplete="off">
+            </div>
+            <input type="submit" name="submit" value="Confirm" id="login-submit">
+        </form>
+    </div>
+</div>
+<script src="~/js/login/login-color-theme.js"></script>

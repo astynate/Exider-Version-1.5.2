@@ -1,0 +1,88 @@
+.item-content {
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    background: #f6faff;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.15s ease;
+    user-select: none;
+}
+
+.item-content[id="image"] {
+
+    background: none;
+    overflow: visible;
+
+}
+
+.item-content[id="ppt"] { background: #f8f2f2; }
+.item-content[id="xlsx"] { background: #eff8f1; }
+.item-content[id="docx"] { background: #f3f5ff; }
+
+
+.folder-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    width: 55%;
+    transform: translateX(-50%) translateY(-50%);
+    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.07));
+    transition: 0.15s ease;
+}
+
+.item:active .folder-image {
+
+    transform: scale(105%) translateX(-47.5%) translateY(-47.5%);
+
+}
+
+.file {
+
+    height: auto;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    background: white;
+    border-radius: 7px;
+    aspect-ratio: 1 / 1.4;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.07));
+
+}
+
+.file-image {
+
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+    max-height: auto;
+    top: 50%;
+    left: 50%;
+    border-radius: 15px;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.07));
+    transition: 0.15s ease;
+    border: 2px solid transparent;
+    padding: 2px;
+
+}
+
+.item:hover .file-image {
+
+    border: 2px solid #1f6dff10;
+    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.12));
+
+}
+
+.item:active .file-image {
+
+    transform: scale(95%) translateX(-52.5%) translateY(-52.5%);
+    border: 2px solid #1f6dff50;
+    filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.18));
+
+}

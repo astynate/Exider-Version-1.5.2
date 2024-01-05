@@ -1,0 +1,79 @@
+/* Create Form Styles */
+
+.Main-Content-Create-Form {
+    height: 0px;
+    width: 200px;
+    position: fixed;
+    z-index: 2;
+    top: 150px;
+    right: 20px;
+    margin-right: var(--main-content-paddings);
+    backdrop-filter: blur(40px);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    overflow: hidden;
+    animation: create_form 1s ease-out;
+    transition: 0.3s ease;
+    z-index: 999999999;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.25);
+}
+
+.create_form[id="active"] {
+    height: 280px;
+}
+
+.Main-Content-Create-Form form {
+    height: 100%;
+    margin-top: 0px;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.Content-Type {
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 1px;
+    grid-gap: 5px;
+    position: relative;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    transition: 0.15s ease;
+}
+
+.Content-Type:hover {
+
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.99);
+
+}
+
+.Content-Type h1 {
+
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 7px;
+
+}
+
+    .Content-Type img {
+        height: auto;
+        width: 35px;
+    }
+
+.Content-Type input {
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    
+}
+
+/* ----------------- */

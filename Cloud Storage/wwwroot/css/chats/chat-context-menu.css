@@ -1,0 +1,88 @@
+/* Context Menu Styles */
+
+.Chat-Context-Menu {
+
+    height: 0;
+    width: 215px;
+    z-index: 30000;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-right: var(--main-content-paddings);
+    backdrop-filter: blur(40px);
+    background: #2c2d2eb0;
+    border: 0px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    overflow: hidden;
+    animation: create_form 1s ease-out;
+    transition: 0.2s ease;
+
+}
+
+.Chat-Context-Menu[id="active"] {
+
+    height: 298px;
+
+}
+
+.Chat-Context-Menu[id="passive"] {
+
+    height: 0;
+
+}
+
+.Main-Content-Create-Form form {
+
+    margin-top: 0px;
+
+}
+
+.Content-Type {
+    
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    grid-gap: 10px;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transition: 0.15s ease;
+
+}
+
+.Content-Type:hover {
+
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.2);
+
+}
+
+.Content-Type h1 {
+
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 15px;
+
+}
+
+.Content-Type img {
+    
+    height: 30px;
+    width: auto;
+    filter: invert(100%);
+
+}
+
+.Content-Type input {
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    
+}
+
+/* ----------------- */

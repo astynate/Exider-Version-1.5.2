@@ -1,0 +1,758 @@
+﻿@{
+    Layout = null;
+    string[] image_format = new string[4] { "png", "jpg", "jpeg", "gif" };
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Exider — Chats Page</title>
+
+    <link rel="stylesheet" href="~/css/mobile/global/global-style-mobile.css">
+    <link rel="stylesheet" href="~/css/mobile/global/add-button.css">
+    <link rel="stylesheet" href="~/css/chats/chats-local.css">
+    <link rel="stylesheet" href="~/css/mobile/chats/chats-local.css">
+    <link rel="stylesheet" href="~/css/mobile/global/nav-bar.css">
+
+    <link rel="stylesheet" href="~/css/chats/chats-chat.css">
+    <link rel="stylesheet" href="~/css/chats/chats-message.css">
+    <link rel="stylesheet" href="~/css/chats/message-context-menu.css">
+    <link rel="stylesheet" href="~/css/chats/chat-context-menu.css">
+    <link rel="stylesheet" href="~/css/chats/chat-header-local.css">
+    <link rel="stylesheet" href="~/css/chats/chat-loader.css">
+    <link rel="stylesheet" href="~/css/global-styles/global-styles-chats.css" />
+    <link rel="stylesheet" href="~/css/global-styles/left-panel-chats.css" />
+    <link rel="stylesheet" href="~/css/global-styles/error-message.css" />
+    <link rel="stylesheet" href="~/css/pop-up-windows/pop-up-window-local.css" />
+    <link rel="stylesheet" href="~/css/pop-up-windows/pop-up-window-ok-cancel.css" />
+    <link rel="stylesheet" href="~/css/pop-up-windows/pop-up-window-stickers.css" />
+    <link rel="stylesheet" href="~/css/pop-up-windows/context-menu.css" />
+    <link rel="stylesheet" href="~/css/mobile/chats/chat-local.css">
+</head>
+<body>
+    <div class="Chat" id="passive">
+        <div class="Chat-Wrapper" id="chat">
+
+            <div class="Chat-Header" id="active">
+                <div class="Chat-Header-MinDesc">
+                    <img src="~/Images/Chats/back.svg" class="back-button">
+                    <img id="chat-avatar">
+                    <h1>not set</h1>
+                </div>
+                <div class="Header-Options">
+                    <img src="~/Images/Chats/search.png" alt="">
+                    <img src="~/Images/Chats/info.png" alt="">
+                </div>
+            </div>
+
+            <div class="Chat-Content" id="all-messages">
+
+                <div class="chat-loader" id="active">
+                    <img src="~/Images/Chats/loader.gif" alt="">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="Chat-Input" id="active">
+            <div class="pop-up-window-stickers" id="passive">
+                <div class="chat-header-switch" id="stickers">
+                    <span id="active">Emoji</span>
+                    <span>Stickers</span>
+                    <span>Gifs</span>
+                </div>
+                <div class="stickers">
+                    <span>Most Popular</span>
+                    <div class="sticker-content" id="emoji">
+                        <div class="smile">❤️</div>
+                        <div class="smile">🔥</div>
+                        <div class="smile">😂</div>
+                        <div class="smile">👏</div>
+                        <div class="smile">🤣</div>
+                        <div class="smile">😎</div>
+                    </div>
+                    <span>Smileys</span>
+                    <div class="sticker-content" id="emoji">
+                        <div class="smile">😄</div>
+                        <div class="smile">😁</div>
+                        <div class="smile">😆</div>
+                        <div class="smile">😅</div>
+                        <div class="smile">😂</div>
+                        <div class="smile">🤣</div>
+                        <div class="smile">🥲</div>
+                        <div class="smile">🥹</div>
+                        <div class="smile">😊</div>
+                        <div class="smile">😇</div>
+                        <div class="smile">🙂</div>
+                        <div class="smile">🙃</div>
+                        <div class="smile">😉</div>
+                        <div class="smile">😌</div>
+                        <div class="smile">😍</div>
+                        <div class="smile">🥰</div>
+                        <div class="smile">😘</div>
+                        <div class="smile">😗</div>
+                        <div class="smile">😙</div>
+                        <div class="smile">😚</div>
+                        <div class="smile">😋</div>
+                        <div class="smile">😛</div>
+                        <div class="smile">😝</div>
+                        <div class="smile">😜</div>
+                        <div class="smile">🤪</div>
+                        <div class="smile">🤨</div>
+                        <div class="smile">🧐</div>
+                        <div class="smile">🤓</div>
+                        <div class="smile">😎</div>
+                        <div class="smile">🥸</div>
+                        <div class="smile">🤩</div>
+                        <div class="smile">🥳</div>
+                        <div class="smile">😏</div>
+                        <div class="smile">😒</div>
+                        <div class="smile">😞</div>
+                        <div class="smile">😔</div>
+                        <div class="smile">😟</div>
+                        <div class="smile">😕</div>
+                        <div class="smile">🙁</div>
+                        <div class="smile">☹️</div>
+                        <div class="smile">😣</div>
+                        <div class="smile">😖</div>
+                        <div class="smile">😫</div>
+                        <div class="smile">😩</div>
+                        <div class="smile">🥺</div>
+                        <div class="smile">😢</div>
+                        <div class="smile">😭</div>
+                        <div class="smile">😮‍💨</div>
+                        <div class="smile">😤</div>
+                        <div class="smile">😠</div>
+                        <div class="smile">😡</div>
+                        <div class="smile">🤬</div>
+                        <div class="smile">🤯</div>
+                        <div class="smile">😳</div>
+                        <div class="smile">🥵</div>
+                        <div class="smile">🥶</div>
+                        <div class="smile">😱</div>
+                        <div class="smile">😨</div>
+                        <div class="smile">😰</div>
+                        <div class="smile">😥</div>
+                        <div class="smile">😓</div>
+                        <div class="smile">🫣</div>
+                        <div class="smile">🤗</div>
+                        <div class="smile">🫡</div>
+                        <div class="smile">🤔</div>
+                        <div class="smile">🫢</div>
+                        <div class="smile">🤭</div>
+                        <div class="smile">🤫</div>
+                        <div class="smile">🤥</div>
+                        <div class="smile">😶</div>
+                        <div class="smile">😶‍🌫️</div>
+                        <div class="smile">😐</div>
+                        <div class="smile">😑</div>
+                        <div class="smile">😬</div>
+                        <div class="smile">🫨</div>
+                        <div class="smile">🫠</div>
+                        <div class="smile">🙄</div>
+                        <div class="smile">😯</div>
+                        <div class="smile">😦</div>
+                        <div class="smile">😧</div>
+                        <div class="smile">😮</div>
+                        <div class="smile">😲</div>
+                        <div class="smile">🥱</div>
+                        <div class="smile">😴</div>
+                        <div class="smile">🤤</div>
+                        <div class="smile">😪</div>
+                        <div class="smile">😵</div>
+                        <div class="smile">😵‍💫</div>
+                        <div class="smile">🫥</div>
+                        <div class="smile">🤐</div>
+                        <div class="smile">🥴</div>
+                        <div class="smile">🤢</div>
+                        <div class="smile">🤮</div>
+                        <div class="smile">🤧</div>
+                        <div class="smile">😷</div>
+                        <div class="smile">🤒</div>
+                        <div class="smile">🤕</div>
+                        <div class="smile">🤑</div>
+                        <div class="smile">🤠</div>
+                        <div class="smile">😈</div>
+                        <div class="smile">👿</div>
+                        <div class="smile">👹</div>
+                        <div class="smile">👺</div>
+                        <div class="smile">🤡</div>
+                        <div class="smile">💩</div>
+                        <div class="smile">👻</div>
+                        <div class="smile">💀</div>
+                        <div class="smile">☠️</div>
+                        <div class="smile">👽</div>
+                        <div class="smile">👾</div>
+                        <div class="smile">🤖</div>
+                        <div class="smile">🎃</div>
+                        <div class="smile">😺</div>
+                        <div class="smile">😸</div>
+                        <div class="smile">😹</div>
+                        <div class="smile">😻</div>
+                        <div class="smile">😼</div>
+                        <div class="smile">😽</div>
+                        <div class="smile">🙀</div>
+                        <div class="smile">😿</div>
+                        <div class="smile">😾</div>
+                    </div>
+                    <span>Gestures and Body Parts</span>
+                    <div class="sticker-content" id="emoji">
+                        <div class="smile">👋</div>
+                        <div class="smile">🤚</div>
+                        <div class="smile">🖐</div>
+                        <div class="smile">✋</div>
+                        <div class="smile">🖖</div>
+                        <div class="smile">👌</div>
+                        <div class="smile">🤌</div>
+                        <div class="smile">🤏</div>
+                        <div class="smile">✌️</div>
+                        <div class="smile">🤞</div>
+                        <div class="smile">🫰</div>
+                        <div class="smile">🤟</div>
+                        <div class="smile">🤘</div>
+                        <div class="smile">🤙</div>
+                        <div class="smile">🫵</div>
+                        <div class="smile">🫱</div>
+                        <div class="smile">🫲</div>
+                        <div class="smile">🫸</div>
+                        <div class="smile">🫷</div>
+                        <div class="smile">🫳</div>
+                        <div class="smile">🫴</div>
+                        <div class="smile">👈</div>
+                        <div class="smile">👉</div>
+                        <div class="smile">👆</div>
+                        <div class="smile">🖕</div>
+                        <div class="smile">👇</div>
+                        <div class="smile">☝️</div>
+                        <div class="smile">👍</div>
+                        <div class="smile">👎</div>
+                        <div class="smile">✊</div>
+                        <div class="smile">👊</div>
+                        <div class="smile">🤛</div>
+                        <div class="smile">🤜</div>
+                        <div class="smile">👏</div>
+                        <div class="smile">🫶</div>
+                        <div class="smile">🙌</div>
+                        <div class="smile">👐</div>
+                        <div class="smile">🤲</div>
+                        <div class="smile">🤝</div>
+                        <div class="smile">🙏</div>
+                        <div class="smile">✍️</div>
+                        <div class="smile">💅</div>
+                        <div class="smile">🤳</div>
+                        <div class="smile">💪</div>
+                        <div class="smile">🦾</div>
+                        <div class="smile">🦵</div>
+                        <div class="smile">🦿</div>
+                        <div class="smile">🦶</div>
+                        <div class="smile">👣</div>
+                        <div class="smile">👂</div>
+                        <div class="smile">🦻</div>
+                        <div class="smile">👃</div>
+                        <div class="smile">🫀</div>
+                        <div class="smile">🫁</div>
+                        <div class="smile">🧠</div>
+                        <div class="smile">🦷</div>
+                        <div class="smile">🦴</div>
+                        <div class="smile">👀</div>
+                        <div class="smile">👁</div>
+                        <div class="smile">👅</div>
+                        <div class="smile">👄</div>
+                        <div class="smile">🫦</div>
+                        <div class="smile">💋</div>
+                        <div class="smile">🩸</div>
+                    </div>
+                    <span>Animals & Nature</span>
+                    <div class="sticker-content" id="emoji">
+                        <div class="smile">🐶</div>
+                        <div class="smile">🐱</div>
+                        <div class="smile">🐭</div>
+                        <div class="smile">🐹</div>
+                        <div class="smile">🐰</div>
+                        <div class="smile">🦊</div>
+                        <div class="smile">🐻</div>
+                        <div class="smile">🐼</div>
+                        <div class="smile">🐻‍❄️</div>
+                        <div class="smile">🐨</div>
+                        <div class="smile">🐯</div>
+                        <div class="smile">🦁</div>
+                        <div class="smile">🐮</div>
+                        <div class="smile">🐷</div>
+                        <div class="smile">🐽</div>
+                        <div class="smile">🐸</div>
+                        <div class="smile">🐵</div>
+                        <div class="smile">🙈</div>
+                        <div class="smile">🙉</div>
+                        <div class="smile">🙊</div>
+                        <div class="smile">🐒</div>
+                        <div class="smile">🐔</div>
+                        <div class="smile">🐧</div>
+                        <div class="smile">🐦</div>
+                        <div class="smile">🐦‍⬛</div>
+                        <div class="smile">🐤</div>
+                        <div class="smile">🐣</div>
+                        <div class="smile">🐥</div>
+                        <div class="smile">🦆</div>
+                        <div class="smile">🦅</div>
+                        <div class="smile">🦉</div>
+                        <div class="smile">🦇</div>
+                        <div class="smile">🐺</div>
+                        <div class="smile">🐗</div>
+                        <div class="smile">🐴</div>
+                        <div class="smile">🦄</div>
+                        <div class="smile">🐝</div>
+                        <div class="smile">🪱</div>
+                        <div class="smile">🐛</div>
+                        <div class="smile">🦋</div>
+                        <div class="smile">🐌</div>
+                        <div class="smile">🐞</div>
+                        <div class="smile">🐜</div>
+                        <div class="smile">🪰</div>
+                        <div class="smile">🪲</div>
+                        <div class="smile">🪳</div>
+                        <div class="smile">🦟</div>
+                        <div class="smile">🦗</div>
+                        <div class="smile">🕷</div>
+                        <div class="smile">🕸</div>
+                        <div class="smile">🦂</div>
+                        <div class="smile">🐢</div>
+                        <div class="smile">🐍</div>
+                        <div class="smile">🦎</div>
+                        <div class="smile">🦖</div>
+                        <div class="smile">🦕</div>
+                        <div class="smile">🐙</div>
+                        <div class="smile">🦑</div>
+                        <div class="smile">🦐</div>
+                        <div class="smile">🦞</div>
+                        <div class="smile">🦀</div>
+                        <div class="smile">🪼</div>
+                        <div class="smile">🪸</div>
+                        <div class="smile">🐡</div>
+                        <div class="smile">🐠</div>
+                        <div class="smile">🐟</div>
+                        <div class="smile">🐬</div>
+                        <div class="smile">🐳</div>
+                        <div class="smile">🐋</div>
+                        <div class="smile">🦈</div>
+                        <div class="smile">🐊</div>
+                        <div class="smile">🐅</div>
+                        <div class="smile">🐆</div>
+                        <div class="smile">🦓</div>
+                        <div class="smile">🫏</div>
+                        <div class="smile">🦍</div>
+                        <div class="smile">🦧</div>
+                        <div class="smile">🦣</div>
+                        <div class="smile">🐘</div>
+                        <div class="smile">🦛</div>
+                        <div class="smile">🦏</div>
+                        <div class="smile">🐪</div>
+                        <div class="smile">🐫</div>
+                        <div class="smile">🦒</div>
+                        <div class="smile">🦘</div>
+                        <div class="smile">🦬</div>
+                        <div class="smile">🐃</div>
+                        <div class="smile">🐂</div>
+                        <div class="smile">🐄</div>
+                        <div class="smile">🐎</div>
+                        <div class="smile">🐖</div>
+                        <div class="smile">🐏</div>
+                        <div class="smile">🐑</div>
+                        <div class="smile">🦙</div>
+                        <div class="smile">🐐</div>
+                        <div class="smile">🦌</div>
+                        <div class="smile">🫎</div>
+                        <div class="smile">🐕</div>
+                        <div class="smile">🐩</div>
+                        <div class="smile">🦮</div>
+                        <div class="smile">🐕‍🦺</div>
+                        <div class="smile">🐈</div>
+                        <div class="smile">🐈‍⬛</div>
+                        <div class="smile">🪽</div>
+                        <div class="smile">🪶</div>
+                        <div class="smile">🐓</div>
+                        <div class="smile">🦃</div>
+                        <div class="smile">🦤</div>
+                        <div class="smile">🦚</div>
+                        <div class="smile">🦜</div>
+                        <div class="smile">🦢</div>
+                        <div class="smile">🪿</div>
+                        <div class="smile">🦩</div>
+                        <div class="smile">🕊</div>
+                        <div class="smile">🐇</div>
+                        <div class="smile">🦝</div>
+                        <div class="smile">🦨</div>
+                        <div class="smile">🦡</div>
+                        <div class="smile">🦫</div>
+                        <div class="smile">🦦</div>
+                        <div class="smile">🦥</div>
+                        <div class="smile">🐁</div>
+                        <div class="smile">🐀</div>
+                        <div class="smile">🐿</div>
+                        <div class="smile">🦔</div>
+                        <div class="smile">🐾</div>
+                        <div class="smile">🐉</div>
+                        <div class="smile">🐲</div>
+                        <div class="smile">🌵</div>
+                        <div class="smile">🎄</div>
+                        <div class="smile">🌲</div>
+                        <div class="smile">🌳</div>
+                        <div class="smile">🌴</div>
+                        <div class="smile">🪹</div>
+                        <div class="smile">🪺</div>
+                        <div class="smile">🪵</div>
+                        <div class="smile">🌱</div>
+                        <div class="smile">🌿</div>
+                        <div class="smile">☘️</div>
+                        <div class="smile">🍀</div>
+                        <div class="smile">🎍</div>
+                        <div class="smile">🪴</div>
+                        <div class="smile">🎋</div>
+                        <div class="smile">🍃</div>
+                        <div class="smile">🍂</div>
+                        <div class="smile">🍁</div>
+                        <div class="smile">🍄</div>
+                        <div class="smile">🐚</div>
+                        <div class="smile">🪨</div>
+                        <div class="smile">🌾</div>
+                        <div class="smile">💐</div>
+                        <div class="smile">🌷</div>
+                        <div class="smile">🪷</div>
+                        <div class="smile">🌹</div>
+                        <div class="smile">🥀</div>
+                        <div class="smile">🌺</div>
+                        <div class="smile">🌸</div>
+                        <div class="smile">🪻</div>
+                        <div class="smile">🌼</div>
+                        <div class="smile">🌻</div>
+                        <div class="smile">🌞</div>
+                        <div class="smile">🌝</div>
+                        <div class="smile">🌛</div>
+                        <div class="smile">🌜</div>
+                        <div class="smile">🌚</div>
+                        <div class="smile">🌕</div>
+                        <div class="smile">🌖</div>
+                        <div class="smile">🌗</div>
+                        <div class="smile">🌘</div>
+                        <div class="smile">🌑</div>
+                        <div class="smile">🌒</div>
+                        <div class="smile">🌓</div>
+                        <div class="smile">🌔</div>
+                        <div class="smile">🌙</div>
+                        <div class="smile">🌎</div>
+                        <div class="smile">🌍</div>
+                        <div class="smile">🌏</div>
+                        <div class="smile">🪐</div>
+                        <div class="smile">💫</div>
+                        <div class="smile">⭐️</div>
+                        <div class="smile">🌟</div>
+                        <div class="smile">✨</div>
+                        <div class="smile">⚡️</div>
+                        <div class="smile">☄️</div>
+                        <div class="smile">💥</div>
+                        <div class="smile">🔥</div>
+                        <div class="smile">🌪</div>
+                        <div class="smile">🌈</div>
+                        <div class="smile">☀️</div>
+                        <div class="smile">🌤</div>
+                        <div class="smile">⛅️</div>
+                        <div class="smile">🌥</div>
+                        <div class="smile">☁️</div>
+                        <div class="smile">🌦</div>
+                        <div class="smile">🌧</div>
+                        <div class="smile">⛈</div>
+                        <div class="smile">🌩</div>
+                        <div class="smile">🌨</div>
+                        <div class="smile">❄️</div>
+                        <div class="smile">☃️</div>
+                        <div class="smile">⛄️</div>
+                        <div class="smile">🌬</div>
+                        <div class="smile">💨</div>
+                        <div class="smile">💧</div>
+                        <div class="smile">💦</div>
+                        <div class="smile">🫧</div>
+                        <div class="smile">☔️</div>
+                        <div class="smile">☂️</div>
+                        <div class="smile">🌊</div>
+                    </div>
+                </div>
+            </div>
+            <div class="Reply">
+                <div class="Reply-Content">
+                    <span></span>
+                    <p></p>
+                </div>
+                <img src="images/Chats/exit.png" class="close-reply" />
+            </div>
+            <div class="chat-typing-notification">
+                <span>Jenna is typing</span>
+                <div class="typing-point" id="p-1"></div>
+                <div class="typing-point" id="p-2"></div>
+                <div class="typing-point" id="p-3"></div>
+            </div>
+            <form enctype="multipart/form-data" autocomplete="off" id="send-message">
+                <div class="chat-entry-field">
+                    <div class="chat-entry-field-button">
+                        <img src="Images/Chats/plus.png">
+                    </div>
+                    <div contenteditable="true" id="message-text" placeholder="Enter text"></div>
+                    <div class="chat-entry-field-button smile-button" id="right" onclick="EmojiWindow.ChangeDisplay()">
+                        <img src="Images/Chats/smile.svg">
+                    </div>
+                    <div class="chat-entry-field-button" id="right">
+                        <img src="Images/Chats/voice-message-2.png">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="body-wrapper">
+        <div class="body-header">
+            <div>
+                <img src="data:image/png;base64,@(Convert.ToBase64String(ViewBag.currentUser.Avatar))" class="user-avatar">
+            </div>
+            <span>Messages</span>
+            <img src="Images/Chats/write.png" class="write-message">
+        </div>
+        <div class="body-content">
+            <div class="search-wrapper">
+                <div class="search">
+                    <img src="Images/buttons-mobile/search-passive.svg" class="search-image">
+                    <input type="text" name="" class="search-input" placeholder="Search">
+                </div>
+            </div>
+            <div id="all-chats">
+
+                <div class="nav-bar">
+                    <div class="nav-bar-item" id="active">All</div>
+                    <div class="nav-bar-item">Chats</div>
+                    <div class="nav-bar-item">Groups</div>
+                    <div class="nav-bar-item">AI</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="add-button">
+        </div>
+        <div class="body-navigation-panel">
+            <img src="Images/buttons-mobile/home-passive.png" class="navigation-button" id="home" onclick="window.location.href = '/home'">
+            <img src="Images/buttons-mobile/search-passive.svg" class="navigation-button" id="search" onclick="window.location.href = '/explore'">
+            <img src="Images/buttons-mobile/add-passive.svg" class="navigation-button" id="add">
+            <img src="Images/buttons-mobile/cloud-passive.svg" class="navigation-button" id="cloud" onclick="window.location.href = '/files'">
+            <img src="Images/buttons-mobile/chats-active.svg" class="navigation-button" id="chats" onclick="window.location.href = '/chats'">
+        </div>
+    </div>
+    <script src="~/js/global-logic/client-db-interface.js"></script>
+    <script src="~/js/chats/chat-userhub-cor.js"></script>
+    <script src="~/js/chats/chats-user-hub-interface.js"></script>
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chats/chats-rendering-chats.js"></script>
+    <script>
+        window.addEventListener('click', (event) => {
+
+            if (event.target.id != 'add' && event.target.className != 'add-button') {
+
+                document.querySelector('.add-button')
+                    .id = 'passive';
+
+            }
+
+        });
+        document.querySelector('#add').addEventListener('click', () => {
+
+            document.querySelector('.add-button')
+                .id = 'active';
+
+        });
+    </script>
+    <script>
+
+        var element = document.getElementById('chat');
+        element.style.scrollBehavior = 'smooth';
+        element.scrollTop = element.scrollHeight;
+
+        window.addEventListener('click', (event) => {
+
+            let isReplyMessage = event.target.className == 'Reply-Message-Header' ||
+                event.target.closest('.Reply-Message-Header');
+
+            if (isReplyMessage) {
+
+                const replyMessageHeader = event.target
+                    .closest('.Reply-Message-Header');
+
+                if (replyMessageHeader) {
+
+                    const messageId = replyMessageHeader
+                        .getAttribute('data-message-id');
+
+                    let message = document
+                        .querySelector(`[data-message-id="${messageId}"]`);
+
+                    message.scrollIntoView({ block: "center", behavior: "smooth" });
+                    message.style.background = '#eef';
+
+                    setTimeout(() => {
+                        message.style.background = 'white';
+                    }, 2000);
+
+                }
+
+            }
+
+        });
+
+        console.log("%cStop! Copyright © 2023 Andreev S. Minsk, Belarus", "color: red; font-size: 25px; font-weight: bold");
+        console.log("%cThis is a tool intended for developers only! We are not responsible for your lost data. Do not provide the information you see here to anyone. Do not attempt to commit a cyber crime, it is punishable by law!", "font-size: 18px;");
+
+        function saveDataToIndexedDB(data) {
+
+            indexedDB.deleteDatabase('Messenger', 1);
+            const request = indexedDB.open('Messenger', 1);
+
+            request.onupgradeneeded = function (event) {
+
+                const db = event.target.result;
+
+                db.createObjectStore('chats', { keyPath: 'chat_id' });
+                db.createObjectStore('dialogues', { keyPath: 'chat_id' });
+                db.createObjectStore('messages', { keyPath: 'id' });
+                db.createObjectStore('users', { keyPath: 'root' });
+
+            };
+
+            request.onsuccess = function (event) {
+
+                const db = event.target.result;
+                const transaction = db.transaction(['chats', 'dialogues', 'users'], 'readwrite');
+                const chatsStore = transaction.objectStore('chats');
+                const dialoguesStore = transaction.objectStore('dialogues');
+                const usersStore = transaction.objectStore('users');
+
+                data.chats.forEach(chat => chatsStore.put(chat));
+                data.dialogues.forEach(dialogue => dialoguesStore.put(dialogue));
+                data.users.forEach(user => usersStore.put(user));
+
+                transaction.onerror = function (event) {
+                    console.error('Error saving data:', event.target.error);
+                };
+
+            };
+
+            request.onerror = function (event) {
+                console.error('Error opening database:', event.target.error);
+            };
+
+        }
+
+        var modelData = @Html.Raw(Json.Serialize(Model));
+
+        saveDataToIndexedDB(modelData);
+        ChatRendering.RenderChats(modelData);
+
+    </script>
+    <script>
+
+        var element = document.getElementById('chat');
+
+        element.style.scrollBehavior = 'smooth';
+        element.scrollTop = element.scrollHeight;
+
+        let chats = document.querySelectorAll('#chat-link');
+
+        chats.forEach(element => {
+
+            element.addEventListener('click', (event) => {
+
+                event.preventDefault();
+
+                document.querySelector('.Chat')
+                    .id = 'active';
+
+                document.querySelector('.body-wrapper').style
+                    .transform = 'translateX(-50%)';
+
+            });
+
+        });
+
+        document.querySelector('.back-button').addEventListener('click', (e) => {
+
+            document.querySelector('.Chat')
+                .id = 'passive';
+
+            document.querySelector('.body-wrapper').style
+                .transform = 'none';
+
+        });
+
+        window.addEventListener('click', (event) => {
+
+            let isReplyMessage = event.target.className == 'Reply-Message-Header' ||
+                event.target.closest('.Reply-Message-Header');
+
+            if (isReplyMessage) {
+
+                const replyMessageHeader = event.target
+                    .closest('.Reply-Message-Header');
+
+                if (replyMessageHeader) {
+
+                    const messageId = replyMessageHeader
+                        .getAttribute('data-message-id');
+
+                    let message = document
+                        .querySelector(`[data-message-id="${messageId}"]`);
+
+                    message.scrollIntoView({ block: "center", behavior: "smooth" });
+                    message.style.background = '#eef';
+
+                    setTimeout(() => {
+                        message.style.background = 'white';
+                    }, 2000);
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+    <!-- Popup Windows -->
+
+    <script src="~/js/pop-up-window/pop-up-window-stickers.js"></script>
+    <script src="~/js/pop-up-window/menu.js"></script>
+    <script src="~/js/pop-up-window/context-menu.js"></script>
+    <script src="~/js/pop-up-window/message-context-menu.js"></script>
+
+    <!-- Local Logic -->
+
+    <script src="~/js/chats/chats-local.js"></script>
+    <script src="~/js/chats/mobile/chats-create.js"></script>
+    <script src="~/js/chats/chats-input.js"></script>
+
+    <!-- Message Context Menu -->
+
+    <script src="~/js/chats/chats-reply-message.js"></script>
+    <script src="~/js/chats/chats-edit-message.js"></script>
+
+    <!-- Forward Message Logic (In hierarchical order) -->
+
+    <script src="~/js/pop-up-window/pop-up-window.js"></script>
+    <script src="~/js/pop-up-window/new-message.js"></script>
+    <script src="~/js/pop-up-window/forward-message.js"></script>
+
+    <!-- Delete Messsage -->
+
+    <script src="~/js/pop-up-window/ok-cancel.js"></script>
+
+    <!-- Error MessageBox -->
+
+    <script src="~/js/global-logic/pop-up-error-message.js"></script>
+
+</body>
+</html>

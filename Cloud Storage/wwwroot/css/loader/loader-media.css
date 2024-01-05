@@ -1,0 +1,14 @@
+﻿@media (max-width: 800px) {
+
+    .loader {
+        --width: 170px;
+        --height: var(--width);
+        --border: calc(var(--width) - 7px);
+    }
+
+    .loader img {
+        height: 150px;
+        width: 150px;
+    }
+
+}

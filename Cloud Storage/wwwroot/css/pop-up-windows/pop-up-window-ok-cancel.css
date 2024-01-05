@@ -1,0 +1,85 @@
+.pop-up-window-ok-cancel {
+
+    height: 230px;
+    width: 425px;
+    display: grid;
+    grid-template-rows: auto 60px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+
+}
+
+.pop-up-window-ok-cancel-header {
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.pop-up-window-ok-cancel-title {
+
+    margin: 25px 0px 10px 0px;
+    font-weight: 600;
+    font-size: 21px;
+
+}
+
+.pop-up-window-ok-cancel-description {
+
+    max-width: 80%;
+
+}
+
+.pop-up-window-ok-cancel-footer {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1px;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+}
+
+.pop-up-window-ok-cancel-footer span {
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    transition: 0.25s ease;
+
+}
+
+.pop-up-window-ok-cancel-footer span:hover {
+
+    cursor: pointer;
+    background: #f3f3f3;
+
+}
+
+.pop-up-window-ok-cancel-footer span:active {
+
+    background: #ebebeb;
+
+}
+
+#ok {
+
+    color: rgb(255, 63, 63);
+
+}
+
+#cancel {
+
+    color: rgb(63, 130, 255);
+
+}

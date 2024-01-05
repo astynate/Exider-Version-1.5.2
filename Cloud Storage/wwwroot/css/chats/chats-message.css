@@ -1,0 +1,270 @@
+
+/* Some Comment */
+
+.Invite-Message {
+
+    height: auto;
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+    image-rendering: -webkit-optimize-contrast;
+
+}
+
+.Inviter {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 1px #ddd solid;
+}
+
+.Inviter-Div {
+
+    height: auto;
+    width: auto;
+    position: relative;
+
+}
+
+.Guest {
+    height: 55px;
+    width: 55px;
+    object-fit: cover;
+    border-radius: 100%;
+    transform: translateY(100%) translateX(100%);
+    border: 3px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Invite-Message h1 {
+
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+
+}
+
+.Invite-Message p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    margin-top: 2px;
+    color: #aaa;
+}
+
+.Show-Profile-Button {
+
+    color: #ccc;
+    margin-top: 12px;
+    background: #eee;
+    border-radius: 7px;
+    font-size: 14px;
+    padding: 5px 15px;
+    color: black;
+    font-weight: 500;
+    transition: 0.15s ease;
+    margin-bottom: 30px;
+
+}
+
+.Show-Profile-Button:hover {
+
+    cursor: pointer;
+    background: #ddd;
+
+}
+
+/* Some Comment */
+
+.message-date {
+
+    display: flex;
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+    color: #aaa;
+    font-size: 12px;
+    padding: 0 2%;
+    margin: 30px 0px 30px 0px;
+    justify-content: center;
+
+}
+
+    .message-date p {
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+    }
+
+.message-date hr {
+
+    height: 1px;
+    border: none;
+    outline: none;
+    background: var(--main-border-color);
+    width: 0%;
+
+}
+
+/* Some Comment */
+
+.message {
+
+    height: auto;
+    font-size: 10px;
+    background: none;
+    padding-left: 30px;
+    word-wrap: break-word;
+    display: flex;
+    padding-right: 15px;
+    color: white;
+    background: rgba(255, 255, 255, 0);
+    position: relative;
+    margin-bottom: 12px;
+    transition: 0.75s ease;
+
+}
+
+    .message a {
+        color: #0055ff;
+        text-decoration: underline;
+        font-weight: 400;
+    }
+
+    .message[id="my"] a {
+        color: #eee;
+    }
+
+.message[id="invite"] .message-content {
+
+    margin-left: 0;
+
+}
+
+    .message .message-content {
+        max-width: 370px;
+        margin-left: 30px;
+        background: #efefef;
+        padding: 7px 11px;
+        border-radius: 20px;
+    }
+
+    .message[id="my"] .message-content {
+        background: linear-gradient(-45deg, #2d85ff, #3e99ff);
+        /*background: #4e92ff;*/
+    }
+
+    .message[id="my"] h1 {
+
+        color: white;
+
+    }
+
+    .message[id="my"] p {
+        color: #fff;
+    }
+
+
+    .message h1 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 2px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 5px;
+        padding: 5px 7px;
+        border-left: 1px solid black;
+        margin-bottom: 3px;
+        color: black;
+    }
+
+    .message p {
+        margin: 0;
+        font-size: .92rem;
+        color: #000;
+        font-weight: 400;
+        white-space: pre-line;
+    }
+
+.message-avatar {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    object-fit: cover;
+    position: absolute;
+    margin-bottom: 2px;
+    margin-left: 20px;
+    image-rendering: -webkit-optimize-contrast;
+    bottom: 0;
+    left: 0;
+}
+
+.message[id="my"] {
+
+    background: #4579f2;
+    background: none;
+
+}
+
+.message[id="my"] h1 {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 1px solid white;
+    margin-bottom: 3px;
+}
+
+.message-information {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: end;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.dispatch-stage {
+
+    height: 14px;
+    margin-left: 10px;
+    margin-bottom: 3px;
+
+}
+
+.first, .middle {
+
+    margin-bottom: 0;
+
+}
+
+.message.middle .message-content {
+    border-radius: 4px 20px 20px 4px;
+}
+
+.message.first .message-content {
+    border-radius: 20px 20px 20px 4px;
+}
+
+.message.last .message-content {
+    border-radius: 4px 20px 20px 20px;
+}
+
+.message:hover {
+
+    /* cursor: pointer; */
+    /* background: #fafafa; */
+
+}
+
+/* Some Comment */

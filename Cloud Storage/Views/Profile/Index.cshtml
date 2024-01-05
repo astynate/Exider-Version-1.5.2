@@ -1,0 +1,205 @@
+﻿<title>Exider — @ViewBag.currentUser.Name @ViewBag.currentUser.Surname</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="Images/Icons/logo_3.png">
+<link rel="stylesheet" href="css/global-styles/global-styles.css">
+<link rel="stylesheet" href="css/global-styles/left-panel.css">
+<link rel="stylesheet" href="css/global-styles/devide-line.css">
+<link rel="stylesheet" href="css/global-styles/header.css">
+<link rel="stylesheet" href="css/global-styles/account-menu.css">
+<link rel="stylesheet" href="css/global-styles/notifications.css">
+<link rel="stylesheet" href="css/global-styles/pop-up-window.css">
+<link rel="stylesheet" href="css/global-styles/error-message.css">
+<link rel="stylesheet" href="css/profile/profile-local.css">
+<link rel="stylesheet" href="css/pop-up-windows/pop-up-window-local.css">
+<link rel="stylesheet" href="css/pop-up-windows/pop-up-window-profile.css">
+
+    <div class="pop-up-window-wrapper">
+    
+        <div class="pop-up-window">
+
+            <div class="pop-up-window-header">
+                <span class="pop-up-window-header-description">Edit profile</span>
+                <img src="Images/pop-up-window/exit.png" class="exit-button">
+            </div>
+
+        <form method="post" enctype="multipart/form-data">
+                <div class="pop-up-window-content">
+
+                    <div class="pop-up-window-list">
+            
+                        <div class="pop-up-profile-header">
+                            <img src="Images/Profile/camera.png" class="new-photo">
+                            <img src="data:image/png;base64,@Convert.ToBase64String(ViewBag.currentUser.Header)" class="avatar-img" id="header">
+                            <input type="file" class="file" id="input-header" name="header">
+                        </div>
+    
+                        <div class="pop-up-profile-avatar">
+                            <img src="Images/Profile/camera.png" class="new-photo">
+                            <img src="data:image/png;base64,@Convert.ToBase64String(ViewBag.currentUser.Avatar)" class="avatar-img" id="avatar">
+                            <input type="file" class="file" id="input-avatar" name="avatar">
+                        </div>
+
+                        <input type="text" name="name" value="@ViewBag.currentUser.Name" class="main-input" autocomplete="off" required>
+                        <input type="text" name="surname" value="@ViewBag.currentUser.Surname" class="main-input" autocomplete="off" required>
+                        <input type="text" name="nickname" value="@ViewBag.currentUser.Nickname" class="main-input" autocomplete="off" required>
+
+                    </div>
+                </div>
+                <div class="pop-up-window-footer">
+                    <input type="submit">
+                    Save changes
+                </div>
+            </form>
+            
+        </div>
+
+    </div>
+
+    <div class="account-menu">
+    <div class="account">
+        <img src="1.png" class="avatar">
+        <div class="account-name">
+            <span class="name">@ViewBag.currentUser.Name @ViewBag.currentUser.Surname</span>
+            <span class="nickname">&#64;@ViewBag.currentUser.Nickname</span>
+        </div>
+    </div>
+    <div class="manage-link">
+        <img src="Images/Header/cloud.png">
+        <span>Manage my storage</span>
+        <img src="Images/Header/link.png">
+    </div>
+    <div class="account-button">
+        <img src="Images/Header/help-and-support.png">
+        <span>Help and Support</span>
+    </div>
+    <div class="account-button">
+        <img src="Images/Header/bug.png">
+        <span>Report bug</span>
+    </div>
+    <div class="account-button">
+        <img src="Images/Header/moon.png">
+        <span>Color mode: Light</span>
+    </div>
+    <div class="account-button">
+        <img src="Images/Header/language.png">
+        <span>Language: English</span>
+    </div>
+    <div class="account-button" id="last">
+        <img src="Images/Header/logout.png">
+        <span>Logout</span>
+    </div>
+    </div>
+
+    <div class="notifications-menu">
+    <div class="notifications-menu-header">
+        <span class="notifications-menu-title">Notifications</span>
+        <img src="Images/Header/three-dots.png">
+    </div>
+    <div id="all-notifications">
+        <div class="notification">
+        <img src="Images/Header/info.png" class="info">
+        <span class="notification-text">Thank you for registering an account with us.</span>
+        </div>
+    </div>
+    </div>
+
+    <div class="main-content-header">
+
+    <div class="main-content-header-top">
+        <div class="main-content-header-button">
+            <img src="Images/Home/back.png" alt="back">
+        </div>
+        <div class="main-content-header-button">
+            <img src="Images/Home/next.png" alt="next">
+        </div>
+        <div class="main-content-header-search">
+            <img src="Images/Home/search.png">
+            <input type="text" placeholder="Search generations, peoples, themes" autocomplete="off">
+        </div>
+        <div class="main-content-header-button-wrapper">
+            <div class="main-content-header-button-right">
+                <img src="Images/Home/setting.png" class="main-content-header-button-image">
+            </div>
+            <div class="main-content-header-button-right" id="notification">
+                <img src="Images/Home/notification.png" class="main-content-header-button-image" id="notification">
+            </div>
+        </div>
+        <div class="header-avatar">
+            <img src="data:image/png;base64,@Convert.ToBase64String(ViewBag.currentUser.Avatar)" class="main-content-header-avatar">
+        </div>
+
+    </div>
+    
+    </div>
+    <div class="main-content">
+    <img src="data:image/png;base64,@Convert.ToBase64String(ViewBag.currentUser.Header)" class="header">
+    <div class="main-content-profile">
+
+        <div class="main-content-top">
+            <img src="data:image/png;base64,@Convert.ToBase64String(ViewBag.currentUser.Avatar)" class="main-content-avatar">
+        <div class="account-info">
+            <h1>@ViewBag.currentUser.Name @ViewBag.currentUser.Surname</h1>
+                <p>&#64;@ViewBag.currentUser.Nickname</p>
+        </div>
+        <div class="main-content-profile-button" id="edit-profile">
+            <span id="edit-profile">Edit profile</span>
+        </div>
+        </div>
+
+        <div class="main-content-bottom">
+        <nav class="profile-navigation-button" id="active">My cloud</nav>
+        <nav class="profile-navigation-button">Friends</nav>
+        <nav class="profile-navigation-button">Information</nav>
+        </div>
+
+    </div>
+    </div>
+  <script>
+
+    var inputHeader = document.getElementById('input-header');
+    var inputAvatar = document.getElementById('input-avatar');
+
+    function ChangeImage(input, name) {
+
+      try {
+
+        var file = input.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+
+          var preview = document
+            .getElementById(name).src = e.target.result;
+
+        }
+
+      reader.readAsDataURL(file);
+
+      } catch { }
+
+    }
+
+    inputHeader.addEventListener('change',function() {
+      ChangeImage(inputHeader, 'header')
+    });
+
+    inputAvatar.addEventListener('change',function() {
+      ChangeImage(inputAvatar, 'avatar')
+    });
+
+    document.querySelector('.exit-button').addEventListener('click', () => {
+
+      document.querySelector('.pop-up-window-wrapper')
+        .id = 'passive';
+
+    });
+
+    document.querySelector('#edit-profile').addEventListener('click', () => {
+
+      document.querySelector('.pop-up-window-wrapper')
+        .id = 'active';
+
+    });
+
+  </script>

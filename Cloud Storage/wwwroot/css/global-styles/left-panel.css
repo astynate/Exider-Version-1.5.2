@@ -1,0 +1,136 @@
+
+/* Global Styles */
+
+.Left-Panel {
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+}
+
+/* Logo Image */
+
+.Left-Panel-Logo {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+    .Left-Panel-Logo img {
+        height: 140px;
+        width: 140px;
+        filter: invert(0%);
+    }
+
+/* Menu Buttons */
+
+.Left-Panel-Buttons {
+
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0.9vh;
+
+}
+
+.Button {
+    height: auto;
+    display: flex;
+    grid-gap: 20px;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: 0.15s ease;
+}
+
+.Button:hover {
+
+    background: #f3f3f3;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.Button:hover img {
+
+    transform: scale(105%);
+
+}
+
+.Button:active img {
+
+    transform: scale(90%);
+
+}
+
+.Button[id="active"] h1 {
+
+    font-weight: 700;
+
+}
+
+    .Button img {
+        height: 24px;
+        width: 24px;
+        filter: invert(0%);
+        transition: 0.25s ease;
+    }
+
+.Button h1 {
+
+    font-size: 17px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+
+}
+
+    .Button span {
+        margin-left: auto;
+        font-size: 17px;
+        color: var(--sub-header-text-color);
+    }
+
+/* Storage Space */
+
+.Left-Panel-Storage_Space {
+
+    display: flex;
+    height: 100%;
+    width: auto;
+    padding-left: 3vh;
+    padding-right: 4vh;
+
+}
+
+.Progress-Bar {
+
+    height: 5px;
+    width: 100%;
+    align-self: flex-end;
+    margin-bottom: 5vh;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ebf5ff;
+
+}
+
+.Progress-Bar-Line {
+
+    height: 100%;
+    width: 30%;
+    border-radius: 10px;
+    background: rgb(70, 119, 255);
+
+}

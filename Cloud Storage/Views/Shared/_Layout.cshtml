@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="~/Images/Icons/logo_3.png">
+    <link rel="stylesheet" href="~/css/global-styles/global-styles.css">
+    <link rel="stylesheet" href="~/css/global-styles/.css">
+    <link rel="stylesheet" href="~/css/global-styles/left-panel.css">
+    <link rel="stylesheet" href="~/css/global-styles/devide-line.css">
+    <link rel="stylesheet" href="~/css/global-styles/header.css">
+    <link rel="stylesheet" href="~/css/global-styles/account-menu.css">
+    <link rel="stylesheet" href="~/css/global-styles/notifications.css">
+    <link rel="stylesheet" href="~/css/global-styles/pop-up-window.css">
+    <link rel="stylesheet" href="~/css/global-styles/error-message.css">
+</head>
+<body>
+    <div class="account-menu">
+        <div class="account">
+            <img src="data:image/png;base64,@Convert.ToBase64String(ViewBag.currentUser.Avatar)" class="avatar">
+            <div class="account-name">
+                <span class="name">@ViewBag.currentUser.Name @ViewBag.currentUser.Surname</span>
+                <span class="nickname">&#64;@ViewBag.currentUser.Nickname</span>
+            </div>
+        </div>
+        <div class="manage-link">
+            <img src="Images/Header/cloud.png">
+            <span>Manage my storage</span>
+            <img src="Images/Header/link.png">
+        </div>
+        <div class="account-button">
+            <img src="Images/Header/help-and-support.png">
+            <span>Help and Support</span>
+        </div>
+        <div class="account-button">
+            <img src="Images/Header/bug.png">
+            <span>Report bug</span>
+        </div>
+        <div class="account-button">
+            <img src="Images/Header/moon.png">
+            <span>Color mode: Light</span>
+        </div>
+        <div class="account-button">
+            <img src="Images/Header/language.png">
+            <span>Language: English</span>
+        </div>
+        <div class="account-button" id="last">
+            <img src="Images/Header/logout.png">
+            <span>Logout</span>
+        </div>
+    </div>
+
+    <div class="notifications-menu">
+        <div class="notifications-menu-header">
+            <span class="notifications-menu-title">Notifications</span>
+            <img src="Images/Header/three-dots.png">
+        </div>
+        <div id="all-notifications">
+            <div class="notification">
+                <img src="Images/Header/info.png" class="info">
+                <span class="notification-text">Thank you for registering an account with us.</span>
+            </div>
+        </div>
+    </div>
+    <div class="Body-Wrapper">
+        <div class="Left-Panel" id="passive">
+            <div class="Left-Panel-Logo">
+                <img src="~/Images/Logo/zixe_logo_blue.png" draggable="false" alt="Logo">
+            </div>
+            <div class="Left-Panel-Buttons">
+                <div class="Button" id="@((ViewBag.ActiveButton == "home") ? "active" : "passive")" onclick="window.location.href = '/home'">
+                    <img src="@((ViewBag.ActiveButton == "home") ? 
+                        "/images/Buttons/home_active.svg" : "/images/Buttons/home_passive.svg")">
+                    <h1>Home</h1>
+                    <span>@ViewBag.LeftPanelData[0]</span>
+                </div>
+                <div class="Button" id="@((ViewBag.ActiveButton == "files") ? "active" : "passive")" onclick="window.location.href = '/files'">
+                    <img src="@((ViewBag.ActiveButton == "files") ?
+                        "/images/Buttons/files_active.svg" : "/images/Buttons/files_passive.svg")">
+                    <h1>Files</h1>
+                    <span>@ViewBag.LeftPanelData[1]</span>
+                </div>
+                <div class="Button" id="@((ViewBag.ActiveButton == "gallery") ? "active" : "passive")" onclick="window.location.href = '/gallery'">
+                    <img src="@((ViewBag.ActiveButton == "gallery") ?
+                        "/images/Buttons/gallery_active.svg" : "/images/Buttons/gallery_passive.svg")">
+                    <h1>Gallery</h1>
+                    <span>@ViewBag.LeftPanelData[2]</span>
+                </div>
+                <div class="Button" id="@((ViewBag.ActiveButton == "audio") ? "active" : "passive")" onclick="window.location.href = '/audio'">
+                    <img src="@((ViewBag.ActiveButton == "audio") ?
+                        "/images/Buttons/audio_active.svg" : "/images/Buttons/audio_passive.svg")">
+                    <h1>Audio</h1>
+                    <span>@ViewBag.LeftPanelData[3]</span>
+                </div>
+                <div class="Button" id="@((ViewBag.ActiveButton == "friends") ? "active" : "passive")" onclick="window.location.href = '/friends'">
+                    <img src="@((ViewBag.ActiveButton == "friends") ?
+                        "/images/Buttons/friends_active.svg" : "/images/Buttons/friends_passive.svg")">
+                    <h1>Friends</h1>
+                    <span>@ViewBag.LeftPanelData[4]</span>
+                </div>
+                <div class="Button" id="@((ViewBag.ActiveButton == "chats") ? "active" : "passive")" onclick="window.location.href = '/chats'">
+                    <img src="@((ViewBag.ActiveButton == "chats") ?
+                        "/images/Buttons/chats_active.svg" : "/images/Buttons/chats_passive.svg")">
+                    <h1>Chats</h1>
+                    <span>@ViewBag.LeftPanelData[5]</span>
+                </div>
+                <div class="Button" id="@((ViewBag.ActiveButton == "profile") ? "active" : "passive")" onclick="window.location.href = '/profile'">
+                    <img src="@((ViewBag.ActiveButton == "profile") ?
+                        "/images/Buttons/profile_active.svg" : "/images/Buttons/profile_passive.svg")">
+                    <h1>Profile</h1>
+                </div>
+            </div>
+            <div class="Left-Panel-Storage_Space">
+                <div class="Progress-Bar">
+                    <div class="Progress-Bar-Line" style="width: @ViewBag.OccupiedSpace%;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="Devide-Line"></div>
+        <div class="Main-Content-Wrapper">
+
+            @RenderBody()
+
+        </div>
+    </div>
+    <script>
+
+        console.log("%cStop! Copyright © 2023 Andreev S. Minsk, Belarus", "color: red; font-size: 25px; font-weight: bold");
+        console.log("%cThis is a tool intended for developers only! We are not responsible for your lost data. Do not provide the information you see here to anyone. Do not attempt to commit a cyber crime, it is punishable by law!", "font-size: 18px;");
+
+    </script>
+    <script src="js/global-logic/account.js"></script>
+    <script src="js/global-logic/notifications.js"></script>
+</body>
+</html>

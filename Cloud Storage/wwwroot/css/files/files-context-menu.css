@@ -1,0 +1,80 @@
+/* Context Menu Styles */
+
+.File-Context-Menu {
+    height: 0px;
+    width: 215px;
+    z-index: 30000;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    margin-right: var(--main-content-paddings);
+    backdrop-filter: blur(40px);
+    /*background: #2c2d2eb0;*/
+    background: rgb(240, 240, 240, 0.85);
+    border: 1px solid transparent;
+    border-radius: 15px;
+    overflow: hidden;
+    opacity: 0;
+    animation: create_form 1s ease-out;
+    transition: 0.2s ease;
+}
+
+    .File-Context-Menu[id="active"] {
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        height: 300px;
+        opacity: 1;
+    }
+
+    .File-Context-Menu[id="passive"] {
+        opacity: 0;
+        border: 1px solid transparent;
+        height: 0;
+    }
+
+.Main-Content-Create-Form form {
+
+    margin-top: 0px;
+
+}
+
+.Content-Type {
+    
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    grid-gap: 10px;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: 0.15s ease;
+
+}
+
+    .Content-Type:hover {
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.2);
+        background: rgb(230, 230, 230, 0,95);
+    }
+
+.Content-Type h1 {
+
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 15px;
+
+}
+
+.Content-Type input {
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    
+}
+
+/* ----------------- */

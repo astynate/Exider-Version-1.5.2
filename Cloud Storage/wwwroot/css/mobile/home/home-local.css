@@ -1,0 +1,26 @@
+.body-content {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+    grid-gap: 3px;
+    margin-top: 74px;
+    margin-bottom: 70px;
+
+}
+
+.body-content-image {
+
+    height: 0;
+    width: 100%;
+    background: #eeeeee;
+    padding-bottom: 100%;
+
+}
+
+.body-content-image:nth-child(4n-2) {
+
+    grid-row: span 2;
+    grid-column: span 2;
+
+}

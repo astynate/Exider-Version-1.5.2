@@ -1,0 +1,155 @@
+/* Mededia */
+
+@media (max-width: 849px) {
+
+    .ligth-color-mode {
+
+        --main-form-shadow-color: rgba(0, 0, 0, 0);
+
+    }
+    
+}
+
+@media (max-width: 1138px) {
+    
+    .main-header-wrapper {
+
+        padding-left: 10vw;
+        padding-right: 10vw;
+
+    }
+
+    .main-footer-wrapper {
+
+        padding-left: 10vw;
+        padding-right: 10vw;
+
+    }
+
+}
+
+@media (max-width: 652px) {
+
+    .main-header-wrapper {
+
+        padding-left: 2vw;
+        padding-right: 2vw;
+
+    }
+    
+    .main-footer-wrapper {
+
+        padding-left: 2vw;
+        padding-right: 2vw;
+
+    }
+
+}
+
+@media (max-width: 554px) {
+ 
+    .login-form {
+
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+
+    }
+
+}
+
+@media (max-width: 400px) {
+ 
+    .login-form {
+
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+
+    }
+
+}
+
+@media (max-width: 350px) {
+ 
+    .main-header-wrapper {
+
+        padding-left: 2vw;
+        padding-right: 2vw;
+
+    }
+
+    .login-form {
+
+        width: 100%;
+        margin-top: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
+    .main-header-link-name {
+
+        font-size: 12px;
+
+    }
+
+    .main-header-wrapper-logo {
+
+        height: 37px;
+        width: auto;
+        
+    }
+
+    .login-form-header img {
+
+        height: 65px;
+
+    }
+
+    .login-button-logo {
+
+        height: 35px;
+        width: auto;
+
+    }
+
+    .login-button-text {
+
+        font-size: 16px;
+
+    }
+
+    .login-button, .login-entry-field {
+
+        height: 45px;
+
+    }
+
+    .error-message span {
+
+        font-size: 16px;
+
+    }
+
+    .login-form-header span {
+
+        font-size: 18px;
+
+    }
+
+    .main-header-product-name {
+
+        font-size: 12px;
+
+    }
+
+    #login-submit {
+
+        height: 45px;
+
+    }
+
+}
+
+/* ------ */

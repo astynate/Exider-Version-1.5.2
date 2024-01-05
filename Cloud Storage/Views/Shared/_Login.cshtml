@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="icon" href="~/Images/Icons/logo_3.png">
+    <link rel="stylesheet" href="~/css/loader/loader-local.css">
+    <link href="~/css/loader/loader-local.css" rel="stylesheet" />
+</head>
+<body>
+    <script src="~/js/loader.js"></script>
+    <div class="loader" id="active">
+        <img src="~/Images/Logo/zixe_logo.svg" alt="">
+        <div class="loader-line"></div>
+        <div class="loader-background"></div>
+    </div>
+    <div class="change-theme-button" onclick="ChangeTheme()" id="change-theme">
+        <img src="~/Images/Login/theme.png" draggable="false">
+    </div>
+    <div class="main-header-wrapper">
+        <img src="~/Images/Logo/zixe_logo.png" class="main-header-wrapper-logo" alt="logo" id="header-logo">
+        <span class="main-header-product-name">Exider</span>
+        <div class="main-header-links">
+            <div class="main-header-link">
+                <img src="~/Images/Login/help.png" class="main-header-link-icon" alt="link">
+                <span class="main-header-link-name">Help</span>
+            </div>
+            <div class="main-header-link">
+                <img src="~/Images/Login/link.png" class="main-header-link-icon" alt="link">
+                <span class="main-header-link-name">Terms of use</span>
+            </div>
+        </div>
+    </div>
+    <div class="main-content-wrapper">
+        @RenderBody()
+    </div>
+    <div class="main-footer-wrapper">
+        <div class="main-footer-link">
+            <img src="~/Images/Login/link.png" class="main-footer-link-icon" alt="link">
+            <span class="main-footer-link-name">Privacy and security</span>
+        </div>
+        <div class="main-footer-link">
+            <img src="~/Images/Login/link.png" class="main-footer-link-icon" alt="link">
+            <span class="main-footer-link-name">Social</span>
+        </div>
+        <span>Copyright © 2023 Andreev S. Minsk, Belarus</span>
+    </div>
+    <script>
+        console.log("%cStop! Copyright © 2023 Andreev S. Minsk, Belarus", "color: red; font-size: 25px; font-weight: bold");
+    </script>
+</body>
+</html>

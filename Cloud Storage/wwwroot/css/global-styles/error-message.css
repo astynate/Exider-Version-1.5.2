@@ -1,0 +1,58 @@
+.Error-Message {
+
+    --height: auto;
+    --width: 450px;
+    --padding: 25px;
+    --hover-background: rgba(0, 0, 0, 0.15);
+    --border-color: rgba(0, 0, 0, 0.15);
+
+}
+
+.Error-Message {
+
+    display: flex;
+    flex-direction: column;
+    top: calc(35%);
+    left: calc(50% - var(--width) / 2);
+    position: fixed;
+    height: var(--height);
+    width: var(--width);
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.15);
+    transition: 0.25s ease;
+    z-index: 999999999;
+
+}
+
+.Message {
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 18px;
+    margin-left: 15px;
+
+}
+
+.Error-Footer {
+
+    height: 50px;
+    width: 100%;
+    display: flex;
+    margin-top: auto;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.25s ease;
+    border-top: 1px solid var(--border-color);
+    font-size: 18px;
+    color: #4b93ff;
+
+}
+
+.Error-Footer:hover { 
+
+    background: rgba(0, 0, 0, 0.026);
+
+}
